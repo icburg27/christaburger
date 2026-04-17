@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">{{ .Section | title }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
+  </div>
+</div>
+<div class="container--narrow">
+  <div class="post-single">
+    {{ if .Params.image }}
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-single__image">
+    {{ end }}
+    <div class="post-single__body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,10 @@
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">Christa Burger</a>
+    <ul class="nav__links">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

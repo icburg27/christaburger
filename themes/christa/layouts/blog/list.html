@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">Writing & Ideas</span>
+    <h1>The Blog</h1>
+    <p class="page-hero__lead">Thinking out loud on AI, governance, leadership, and the art of navigating change.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="blog-grid">
+    {{ range (where .Site.RegularPages "Section" "blog") }}
+    <div class="post-card">
+      {{ if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
+      {{ else }}
+        <div class="post-card__image-placeholder">✦</div>
+      {{ end }}
+      <div class="post-card__body">
+        <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
+        <h3 class="post-card__title">{{ .Title }}</h3>
+        <p class="post-card__excerpt">{{ .Summary | truncate 140 }}</p>
+        <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

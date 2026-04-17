@@ -1,0 +1,114 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">AI Consultant · Speaker · Governance Advisor</span>
+      <h1 class="hero__title">Christa<br><em>Burger</em></h1>
+      <p class="hero__tagline">{{ .Site.Params.tagline }}</p>
+      <p class="hero__sub">{{ .Site.Params.subtagline }}</p>
+      <div class="hero__ctas">
+        <a href="/work-with-me" class="btn btn--gold">Work With Me</a>
+        <a href="/about" class="btn btn--outline">My Story</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      {{ if fileExists "static/images/christa-headshot.jpg" }}
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger" class="hero__photo">
+      {{ else }}
+        <div class="hero__photo-placeholder">Photo Coming Soon</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="container">
+    <p class="philosophy__quote">"The AI moment is not a technical problem waiting for a technical solution. It is a <strong>human moment</strong> — and it demands human wisdom."</p>
+    <span class="philosophy__attr">— Christa Burger</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+    <div class="services__header">
+      <span class="services__eyebrow">What I Do</span>
+      <h2>Where I Can Help</h2>
+      <div class="divider divider--center"></div>
+    </div>
+    <div class="services__grid">
+      {{ range .Site.Params.services }}
+      <div class="service-card">
+        <span class="service-card__icon">{{ .icon }}</span>
+        <h3 class="service-card__title">{{ .title }}</h3>
+        <p class="service-card__desc">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-strip__inner">
+      <div>
+        {{ if fileExists "static/images/christa-headshot.jpg" }}
+          <img src="/images/christa-headshot.jpg" alt="Christa Burger" style="width:100%;max-width:380px;object-fit:cover;aspect-ratio:3/4;box-shadow:12px 12px 0 rgba(201,168,76,0.3);">
+        {{ end }}
+      </div>
+      <div>
+        <span class="about-strip__label">About Christa</span>
+        <h2>Wisdom at the intersection of technology and humanity</h2>
+        <div class="divider"></div>
+        <p>I work with organizations, leaders, and communities who know that AI is reshaping the world — and want to navigate that change with intention, not just efficiency. My work sits at the intersection of strategic consulting, public education, and governance — bringing clarity to one of the most consequential moments in human history.</p>
+        <p>I believe the question isn't whether to engage AI. It's how to engage it wisely.</p>
+        <a href="/about" class="btn btn--gold" style="margin-top:1rem;">Read My Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog-preview">
+  <div class="container">
+    <div class="blog-preview__header">
+      <div>
+        <span class="blog-preview__eyebrow">Latest Thinking</span>
+        <h2>From the Blog</h2>
+      </div>
+      <a href="/blog" class="btn btn--purple">All Posts</a>
+    </div>
+    <div class="posts-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <div class="post-card">
+        {{ if .Params.image }}
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
+        {{ else }}
+          <div class="post-card__image-placeholder">✦</div>
+        {{ end }}
+        <div class="post-card__body">
+          <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
+          <h3 class="post-card__title">{{ .Title }}</h3>
+          <p class="post-card__excerpt">{{ .Summary | truncate 120 }}</p>
+          <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Ready to navigate the AI moment?</h2>
+    <p>Whether you need a strategic partner, a keynote speaker, or a governance framework — let's talk.</p>
+    <a href="/contact" class="btn btn--gold">Get In Touch</a>
+  </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,45 @@
+baseURL: "https://christaburger.com"
+languageCode: "en-us"
+title: "Christa Burger"
+theme: "christa"
+
+params:
+  tagline: "Navigating the AI moment with wisdom and precision."
+  subtagline: "Strategic AI for the world that actually exists."
+  description: "AI Consultant, Public Speaker, and Governance Advisor helping organizations navigate the AI moment with wisdom and precision."
+  author: "Christa Burger"
+  email: "christa@christaburger.com"
+
+  services:
+    - title: "AI Consulting"
+      icon: "✦"
+      description: "Strategic guidance for organizations navigating AI adoption — practical, principled, and grounded in how people actually work."
+    - title: "Public Speaking & Education"
+      icon: "◈"
+      description: "Keynotes, workshops, and training that demystify AI and equip leaders, teams, and communities to engage it wisely."
+    - title: "Governance Consulting"
+      icon: "⊕"
+      description: "Frameworks and policy guidance for responsible AI — building structures that protect people while enabling progress."
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "About"
+      url: "/about"
+      weight: 2
+    - name: "Work With Me"
+      url: "/work-with-me"
+      weight: 3
+    - name: "Blog"
+      url: "/blog"
+      weight: 4
+    - name: "Contact"
+      url: "/contact"
+      weight: 5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

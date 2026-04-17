@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">{{ .Date.Format "January 2, 2006" }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
+  </div>
+</div>
+<div class="container--narrow">
+  <article class="post-single">
+    {{ if .Params.image }}
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-single__image">
+    {{ end }}
+    <div class="post-single__body">
+      {{ .Content }}
+    </div>
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(74,32,128,0.1);">
+      <a href="/blog" style="font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);">← Back to Blog</a>
+    </div>
+  </article>
+</div>
+{{ end }}
