@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">{{ .Data.Singular | title }}</span>
+    <h1>{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ len .Pages }} {{ if eq (len .Pages) 1 }}essay{{ else }}essays{{ end }}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="blog-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <div class="post-card">
+      <a href="{{ .Permalink }}">
+      {{ if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
+      {{ else }}
+        <div class="post-card__image-placeholder">✦</div>
+      {{ end }}
+      </a>
+      <div class="post-card__body">
+        <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
+        <h3 class="post-card__title"><a href="{{ .Permalink }}" style="color:inherit;">{{ .Title }}</a></h3>
+        <p class="post-card__excerpt">{{ if .Params.lead }}{{ .Params.lead }}{{ else }}{{ .Summary | truncate 140 }}{{ end }}</p>
+        <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

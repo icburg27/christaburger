@@ -6,19 +6,43 @@
     <p class="page-hero__lead">Governance without theater. Leadership as a way of being. Human operating systems. Field notes from the world that actually exists.</p>
   </div>
 </div>
+
+{{ $series := .Site.GetPage "/series/things-ive-learned-experimenting-with-ai" }}
+{{ if $series }}
+<div class="series-banner">
+  <div class="container">
+    <div class="series-banner__inner">
+      <div>
+        <span class="eyebrow">The Series</span>
+        <h2 style="margin-bottom:0.5rem;">Things I've Learned Experimenting With AI</h2>
+        <p style="margin-bottom:0;">{{ len $series.Pages }} short essays on practical AI: workflows, agents, governance, invisible work, and getting your life back. Start anywhere.</p>
+      </div>
+      <a href="{{ $series.Permalink }}" class="btn btn--gold">Browse the Series</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+
 <div class="container">
   <div class="blog-grid">
     {{ range (where .Site.RegularPages "Section" "blog") }}
     <div class="post-card">
+      <a href="{{ .Permalink }}">
       {{ if .Params.image }}
         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
       {{ else }}
         <div class="post-card__image-placeholder">✦</div>
       {{ end }}
+      </a>
       <div class="post-card__body">
         <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
-        <h3 class="post-card__title">{{ .Title }}</h3>
-        <p class="post-card__excerpt">{{ .Summary | truncate 140 }}</p>
+        <h3 class="post-card__title"><a href="{{ .Permalink }}" style="color:inherit;">{{ .Title }}</a></h3>
+        <p class="post-card__excerpt">{{ if .Params.lead }}{{ .Params.lead }}{{ else }}{{ .Summary | truncate 140 }}{{ end }}</p>
+        {{ with .Params.tags }}
+        <div class="tag-row">
+          {{ range first 3 . }}<a class="tag-pill" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+        {{ end }}
         <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
       </div>
     </div>

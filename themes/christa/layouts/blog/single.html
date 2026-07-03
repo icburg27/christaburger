@@ -1,21 +1,50 @@
 {{ define "main" }}
 <div class="page-hero">
   <div class="container--narrow">
-    <span class="page-hero__eyebrow">{{ .Date.Format "January 2, 2006" }}</span>
+    <span class="page-hero__eyebrow">{{ .Date.Format "January 2, 2006" }}{{ with .Params.categories }} · {{ index . 0 }}{{ end }}</span>
     <h1>{{ .Title }}</h1>
     {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
   </div>
 </div>
+
 <div class="container--narrow">
   <article class="post-single">
+    {{ with .Params.series }}
+    {{ $s := index . 0 }}
+    <div class="series-note">
+      <span>✦</span> Part of the series <a href="{{ "/series/" | relLangURL }}{{ $s | urlize }}/">{{ $s }}</a>
+    </div>
+    {{ end }}
     {{ if .Params.image }}
-      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-single__image">
+      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default .Title }}" class="post-single__image">
     {{ end }}
     <div class="post-single__body">
       {{ .Content }}
     </div>
-    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(74,32,128,0.1);">
-      <a href="/blog" style="font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);">← Back to Blog</a>
+
+    {{ with .Params.tags }}
+    <div class="tag-row" style="margin-top:2.5rem;">
+      {{ range . }}<a class="tag-pill" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+
+    {{ $related := .Site.RegularPages.Related . | first 3 }}
+    {{ with $related }}
+    <div class="related">
+      <span class="eyebrow">Keep Reading</span>
+      <div class="related__grid">
+        {{ range . }}
+        <a href="{{ .Permalink }}" class="related__card">
+          {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}">{{ end }}
+          <span>{{ .Title }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--stone);">
+      <a href="/blog" style="font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--plum);">← All Writing</a>
     </div>
   </article>
 </div>

@@ -3,6 +3,8 @@ title: "What AI Governance Actually Means (And Why Most Organizations Get It Wro
 date: 2026-03-28
 lead: "Governance isn't a compliance checkbox. It's the architecture of accountability."
 image: "/images/plexus-network.jpg"
+tags: ["AI governance", "cybersecurity governance", "responsible AI", "decision intelligence", "AI for leaders"]
+categories: ["Practical AI"]
 ---
 
 When most organizations hear "AI governance," they think one of two things: a policy document nobody reads, or a legal team saying no to everything.

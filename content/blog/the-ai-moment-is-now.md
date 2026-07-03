@@ -3,6 +3,8 @@ title: "The AI Moment Is Now — Are You Navigating It or Reacting to It?"
 date: 2026-04-16
 lead: "The organizations that will thrive aren't the ones moving fastest. They're the ones moving wisest."
 image: "/images/amethyst.jpg"
+tags: ["AI for leaders", "AI governance", "AI strategy", "leadership", "practical AI"]
+categories: ["Practical AI"]
 ---
 
 Every generation faces a moment when the world reorganizes itself around a new force. We are in that moment now.

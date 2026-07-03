@@ -39,3 +39,7 @@ AI is useful when it carries repetition, context, memory, sorting, and first dra
 > The machine can carry repetition. The human must carry meaning.
 
 If that interests you, start with [The Automated Household](/automated-household) — the living lab where all of this is tested against dishes, dogs, teenagers, and Tuesday.
+
+---
+
+**Further reading from the series:** [AI Should Protect Aliveness, Not Just Increase Output](/blog/ai-should-protect-aliveness/) · [Invisible Work Is Still Work](/blog/invisible-work-is-still-work/) · [Margin Is the Metric for Useful AI](/blog/margin-is-the-metric-for-useful-ai/)

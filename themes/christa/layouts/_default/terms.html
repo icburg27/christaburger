@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">Browse</span>
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+<div class="container--narrow">
+  <div class="prose">
+    <div class="tag-row tag-row--large">
+      {{ range .Data.Terms.Alphabetical }}
+      <a class="tag-pill" href="{{ .Page.Permalink }}">{{ .Page.Title }} <span style="opacity:0.6;">({{ .Count }})</span></a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

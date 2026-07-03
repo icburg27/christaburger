@@ -81,3 +81,7 @@ It would be easy to mistake the ponies for a joke. They are a joke — and they 
 > The breakthrough was not building a grocery agent. It was discovering a repeatable household operating pattern I can use again and again.
 
 The pattern travels: inputs → specialists → decision engine → one daily briefing → feedback loop. Food was first. Finances, health, chores, and camping followed. Your version will look different — that's the point.
+
+---
+
+**Further reading from the series:** [Why Metaphor Matters in AI System Design](/blog/metaphor-as-ai-architecture/) · [The Problem With One Giant AI Assistant](/blog/the-problem-with-one-giant-ai-assistant/) · [AI Ecosystems Beat AI Assistants](/blog/ai-ecosystems-beat-ai-assistants/)
