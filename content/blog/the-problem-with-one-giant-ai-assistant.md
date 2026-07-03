@@ -4,7 +4,7 @@ slug: the-problem-with-one-giant-ai-assistant
 date: '2026-04-20'
 lead: One AI for everything eventually becomes a very articulate junk drawer.
 description: Why one giant AI assistant fails, and why role clarity — many small AI functions with well-defined jobs — is the more useful pattern.
-image: /images/pony-council.jpg
+image: /images/pony-council-card.jpg
 image_alt: A council of illustrated pony agents gathered in a woodland — a team of specialists, not one giant assistant
 tags:
 - AI assistants
