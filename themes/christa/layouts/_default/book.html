@@ -78,20 +78,8 @@
   <div class="container--narrow">
     <span class="eyebrow">Free Sample Chapter</span>
     <h2 style="margin-bottom:1rem;">Read "The Task Is Never the Task" — free</h2>
-    <p>Leave your email and I'll send you the sample chapter now, plus early access when the book launches. Launch-team members get the book first, at the lowest price it will ever be — and if it helps you, an honest review on Amazon is the biggest gift you can give an invisible book. (Reviews are never required. That's the whole point of honest.)</p>
-    <!-- Mailchimp: replace form action with your embedded form URL (Audience → Signup forms → Embedded); until then, submissions land in Netlify Forms -->
-    <form class="contact-form" name="book-launch-team" method="POST" data-netlify="true" style="margin-top:2rem;max-width:560px;">
-      <input type="hidden" name="form-name" value="book-launch-team">
-      <div class="form-group">
-        <label for="bk-name">First Name</label>
-        <input type="text" id="bk-name" name="name" placeholder="Optional — so I can say hi properly">
-      </div>
-      <div class="form-group">
-        <label for="bk-email">Email Address</label>
-        <input type="email" id="bk-email" name="email" required placeholder="you@example.com">
-      </div>
-      <button type="submit" class="btn btn--gold" style="align-self:flex-start;">Send Me the Chapter</button>
-    </form>
+    <p>Join the launch team and two things happen: the Field Guide Vault opens for you right now — all five workshop handouts, free — and you get the sample chapter plus first access when the book lands, at the lowest price it will ever be. If it helps you, an honest review on Amazon is the biggest gift you can give an invisible book. (Reviews are never required. That's the whole point of honest.)</p>
+    {{ partial "mc-form.html" (dict "uid" "book-launch" "tags" "82883" "redirect" "/vault/" "button" "Join the Launch Team" "fname" true) }}
   </div>
 </section>
 

@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">{{ .Params.eyebrow | default "Field Guides" }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container--narrow">
+  <div class="prose" style="padding-bottom:1rem;">
+    <div class="prose-body">
+      {{ .Content }}
+    </div>
+
+    <div class="download-list">
+      {{ range .Params.downloads }}
+      <div class="download-card">
+        <span class="download-card__icon">{{ .icon }}</span>
+        <div>
+          <h4>{{ .title }}</h4>
+          <p>{{ .description }}</p>
+        </div>
+        <span style="font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap;">✦ In the Vault</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<section id="unlock" style="background:var(--stone);padding:4rem 0;">
+  <div class="container--narrow">
+    <span class="eyebrow">One Email. All Five. Free.</span>
+    <h2 style="margin-bottom:1rem;">Open the Field Guide Vault</h2>
+    <p>Leave your email and the vault opens right now — all five guides, no drip campaign standing between you and dinner getting easier tonight. You'll also get my letters: one good note every couple of weeks on governance, AI, and the systems that carry a life. Unsubscribe anytime; the guides are yours to keep either way.</p>
+    {{ partial "mc-form.html" (dict "uid" "vault-gate" "tags" "82882" "redirect" "/vault/" "button" "Open the Vault" "fname" true) }}
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Want this taught live?</h2>
+    <p>The Automated Household runs as a workshop for libraries, community groups, and teams.</p>
+    <a href="/contact" class="btn btn--gold">Book a Workshop</a>
+    <a href="/book" class="btn btn--outline" style="margin-left:1rem;">The Book</a>
+  </div>
+</div>
+{{ end }}

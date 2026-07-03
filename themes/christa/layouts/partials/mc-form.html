@@ -1,0 +1,21 @@
+{{- /* Mailchimp signup form.
+     Params (dict): uid (required, unique per page), tags (Mailchimp numeric tag ids, comma-separated),
+     redirect (url after success), success (inline success message), button (label), fname (bool) */ -}}
+<form id="mc-{{ .uid }}" class="contact-form mc-form" action="https://gmail.us3.list-manage.com/subscribe/post?u=224f7efe194d7fb252f37ce44&amp;id=92488633b9" method="POST" novalidate
+      data-tags="{{ .tags }}" data-redirect="{{ .redirect }}" data-success="{{ .success }}" style="margin-top:1.5rem;max-width:560px;">
+  {{ if .fname }}
+  <div class="form-group">
+    <label for="mc-{{ .uid }}-fname">First Name</label>
+    <input type="text" id="mc-{{ .uid }}-fname" name="FNAME" placeholder="Optional — so I can say hi properly">
+  </div>
+  {{ end }}
+  <div class="form-group">
+    <label for="mc-{{ .uid }}-email">Email Address</label>
+    <input type="email" id="mc-{{ .uid }}-email" name="EMAIL" required placeholder="you@example.com">
+  </div>
+  <div style="position:absolute;left:-5000px;" aria-hidden="true">
+    <input type="text" name="b_224f7efe194d7fb252f37ce44_92488633b9" tabindex="-1" value="">
+  </div>
+  <button type="submit" class="btn btn--gold" style="align-self:flex-start;">{{ .button | default "Sign Up" }}</button>
+  <p class="mc-form__msg" role="status" style="display:none;font-size:0.9rem;margin:0;"></p>
+</form>

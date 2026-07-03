@@ -5,9 +5,9 @@ eyebrow: "The Automated Household"
 lead: "From one 60-second prompt to a system that runs on rails."
 description: "How to build your own automated household: the emergency meal prompt, the weekly meal rhythm, and the path from prompts to skills to agents — no engineering degree required."
 cta_title: "Take the field guides with you."
-cta_text: "The workshop deck, the use-case finder, the system builder worksheet — all free."
+cta_text: "The workshop deck, the use-case finder, the system builder worksheet — one email opens the vault."
 cta_url: "/automated-household/downloads/"
-cta_label: "Free Downloads"
+cta_label: "Open the Vault"
 ---
 
 Everything in the Stable System started with one prompt typed by one tired person at 5:30pm. You don't need the architecture on day one. You need one win tonight, a rhythm this week, and a system this month. Here's the actual path.

@@ -16,3 +16,42 @@
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var forms = document.querySelectorAll('.mc-form');
+  forms.forEach(function(f, i){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = f.querySelector('[name=EMAIL]');
+      if (!email || !email.value || email.value.indexOf('@') < 0) { email && email.focus(); return; }
+      var fn = f.querySelector('[name=FNAME]');
+      var msg = f.querySelector('.mc-form__msg');
+      var btn = f.querySelector('button[type=submit]');
+      var cb = 'mcCb' + i + Date.now();
+      btn.disabled = true; btn.style.opacity = 0.6;
+      window[cb] = function(r){
+        var ok = (r && r.result === 'success') || /already/i.test((r && r.msg) || '');
+        if (ok && f.dataset.redirect) { window.location = f.dataset.redirect; return; }
+        btn.disabled = false; btn.style.opacity = 1;
+        msg.style.display = 'block';
+        if (ok) {
+          msg.style.color = 'var(--plum)';
+          msg.textContent = f.dataset.success || 'Thank you — you’re on the list. Watch your inbox.';
+        } else {
+          msg.style.color = '#B76E79';
+          var d = document.createElement('div'); d.innerHTML = (r && r.msg) || 'Something went wrong — please try again.';
+          msg.textContent = d.textContent;
+        }
+      };
+      var params = 'u=224f7efe194d7fb252f37ce44&id=92488633b9'
+        + '&EMAIL=' + encodeURIComponent(email.value)
+        + (fn && fn.value ? '&FNAME=' + encodeURIComponent(fn.value) : '')
+        + (f.dataset.tags ? '&tags=' + f.dataset.tags : '')
+        + '&c=' + cb;
+      var s = document.createElement('script');
+      s.src = 'https://gmail.us3.list-manage.com/subscribe/post-json?' + params;
+      document.body.appendChild(s);
+    });
+  });
+})();
+</script>
