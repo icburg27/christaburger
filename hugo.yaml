@@ -4,22 +4,36 @@ title: "Christa Burger"
 theme: "christa"
 
 params:
-  tagline: "Navigating the AI moment with wisdom and precision."
-  subtagline: "Strategic AI for the world that actually exists."
-  description: "AI Consultant, Public Speaker, and Governance Advisor helping organizations navigate the AI moment with wisdom and precision."
+  tagline: "Governance for the world that actually exists."
+  subtagline: "Build systems people can trust."
+  description: "Christa Burger is a cybersecurity governance executive, speaker, and systems architect helping leaders build humane, accountable operating systems for complex work — encompassing AI governance, enterprise trust, leadership clarity, and work-life architecture."
   author: "Christa Burger"
   email: "christa@christaburger.com"
 
+  proofbar:
+    - "20 Years Cybersecurity Governance"
+    - "VP of Cybersecurity"
+    - "AI Governance"
+    - "Enterprise Trust"
+    - "Household Systems Running in Real Life"
+
   services:
-    - title: "AI Consulting"
+    - title: "Governance Architecture"
       icon: "✦"
-      description: "Strategic guidance for organizations navigating AI adoption — practical, principled, and grounded in how people actually work."
-    - title: "Public Speaking & Education"
-      icon: "◈"
-      description: "Keynotes, workshops, and training that demystify AI and equip leaders, teams, and communities to engage it wisely."
-    - title: "Governance Consulting"
+      url: "/work-with-me"
+      description: "Turn complex work into accountable decision systems — including AI adoption. Clear ownership, practical controls, and governance that behaves like a system, not a document."
+    - title: "Trust & GRC Strategy"
       icon: "⊕"
-      description: "Frameworks and policy guidance for responsible AI — building structures that protect people while enabling progress."
+      url: "/work-with-me"
+      description: "Make risk visible, customer trust credible, and compliance useful. Trust narratives, control roadmaps, and assurance architecture for organizations where the stakes are real."
+    - title: "Speaking & Education"
+      icon: "◈"
+      url: "/speaking"
+      description: "Keynotes and workshops that demystify AI and teach governance without theater — for boards, leadership teams, conferences, and communities. No hype. No panic."
+    - title: "Leadership & Work-Life Systems"
+      icon: "❖"
+      url: "/leadership-work-life"
+      description: "Make leadership sustainable: decision rights, boundaries, rhythms, and care loops. Work-life architecture for leaders who refuse to choose between authority and a whole life."
 
 menu:
   main:
@@ -29,15 +43,24 @@ menu:
     - name: "About"
       url: "/about"
       weight: 2
-    - name: "Work With Me"
+    - name: "Governance"
       url: "/work-with-me"
       weight: 3
-    - name: "Blog"
-      url: "/blog"
+    - name: "Speaking"
+      url: "/speaking"
       weight: 4
+    - name: "Leadership"
+      url: "/leadership-work-life"
+      weight: 5
+    - name: "Household"
+      url: "/automated-household"
+      weight: 6
+    - name: "Writing"
+      url: "/blog"
+      weight: 7
     - name: "Contact"
       url: "/contact"
-      weight: 5
+      weight: 8
 
 markup:
   goldmark:

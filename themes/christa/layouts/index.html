@@ -4,18 +4,18 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__content">
-      <span class="hero__eyebrow">AI Consultant · Speaker · Governance Advisor</span>
-      <h1 class="hero__title">Christa<br><em>Burger</em></h1>
-      <p class="hero__tagline">{{ .Site.Params.tagline }}</p>
-      <p class="hero__sub">{{ .Site.Params.subtagline }}</p>
+      <span class="hero__eyebrow">Governance · Leadership · AI · Human Systems</span>
+      <h1 class="hero__title">Build systems people can <em>trust.</em></h1>
+      <p class="hero__tagline">I help leaders turn complexity into accountable operating systems: clear decisions, practical controls, protected judgment, sustainable leadership, and trust that survives contact with real work.</p>
+      <p class="hero__sub">{{ .Site.Params.tagline }}</p>
       <div class="hero__ctas">
-        <a href="/work-with-me" class="btn btn--gold">Work With Me</a>
-        <a href="/about" class="btn btn--outline">My Story</a>
+        <a href="/work-with-me" class="btn btn--gold">Explore My Work</a>
+        <a href="/speaking" class="btn btn--outline">Request Speaking Kit</a>
       </div>
     </div>
     <div class="hero__image">
       {{ if fileExists "static/images/christa-headshot.jpg" }}
-        <img src="/images/christa-headshot.jpg" alt="Christa Burger" class="hero__photo">
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger, cybersecurity governance executive and speaker" class="hero__photo">
       {{ else }}
         <div class="hero__photo-placeholder">Photo Coming Soon</div>
       {{ end }}
@@ -23,20 +23,31 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<div class="philosophy">
-  <div class="container">
-    <p class="philosophy__quote">"The AI moment is not a technical problem waiting for a technical solution. It is a <strong>human moment</strong> — and it demands human wisdom."</p>
-    <span class="philosophy__attr">— Christa Burger</span>
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar__inner">
+    {{ range .Site.Params.proofbar }}
+    <span class="proof-bar__item">{{ . }}</span>
+    {{ end }}
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<div class="statement">
+  <div class="statement__inner">
+    <span class="eyebrow">The Problem</span>
+    <h2>More tools will not save you.</h2>
+    <div class="divider divider--center"></div>
+    <p>AI, leadership, and modern life are not solved by another platform or another policy nobody reads. They require governance: clear decisions, real ownership, honest boundaries, working rhythms, and care that doesn't collapse under load. Most organizations are not governing AI. They are hoping policies will behave like systems.</p>
   </div>
 </div>
 
 <!-- SERVICES -->
-<section class="services">
+<section class="services" style="padding-top:0;">
   <div class="container">
     <div class="services__header">
       <span class="services__eyebrow">What I Do</span>
-      <h2>Where I Can Help</h2>
+      <h2>Four ways to work together</h2>
       <div class="divider divider--center"></div>
     </div>
     <div class="services__grid">
@@ -45,42 +56,51 @@
         <span class="service-card__icon">{{ .icon }}</span>
         <h3 class="service-card__title">{{ .title }}</h3>
         <p class="service-card__desc">{{ .description }}</p>
+        <a href="{{ .url }}" class="service-card__link">Learn More →</a>
       </div>
       {{ end }}
     </div>
   </div>
 </section>
 
-<!-- ABOUT STRIP -->
+<!-- LIVING PROOF -->
 <section class="about-strip">
   <div class="container">
     <div class="about-strip__inner">
       <div>
         {{ if fileExists "static/images/christa-headshot.jpg" }}
-          <img src="/images/christa-headshot.jpg" alt="Christa Burger" style="width:100%;max-width:380px;object-fit:cover;aspect-ratio:3/4;box-shadow:12px 12px 0 rgba(201,168,76,0.3);">
+          <img src="/images/christa-headshot.jpg" alt="Christa Burger" style="width:100%;max-width:380px;object-fit:cover;aspect-ratio:3/4;box-shadow:12px 12px 0 rgba(200,153,76,0.35);">
         {{ end }}
       </div>
       <div>
-        <span class="about-strip__label">About Christa</span>
-        <h2>Wisdom at the intersection of technology and humanity</h2>
+        <span class="about-strip__label">Living Proof</span>
+        <h2>The smallest complete governance environment is a home.</h2>
         <div class="divider"></div>
-        <p>Senior Director in Cybersecurity GRC by day. Household-of-seven operator by necessity. Writer, workshop builder, and quiet automator by choice. My work sits at the intersection of AI governance, practical systems, and the deeper human questions that neither category fully answers.</p>
-        <p>The systems I talk about are actively running my household right now. The questions I write about are ones I'm genuinely living with. Both matter. Neither is theoretical.</p>
-        <a href="/about" class="btn btn--gold" style="margin-top:1rem;">Read My Story</a>
+        <p>By day, I'm a cybersecurity governance executive. At home, I run a household of seven — five kids across four schools and a college campus, a full animal roster, and the invisible work that usually lands on one person. The AI systems that carry that load are not theoretical. They are running right now.</p>
+        <p>Same principles at both scales: clarify ownership, reduce invisible labor, protect attention, make care repeatable — and leave the human more present than before. The machine can carry repetition. The human must carry meaning.</p>
+        <a href="/automated-household" class="btn btn--gold" style="margin-top:1rem;">The Automated Household</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="container">
+    <p class="philosophy__quote">"Leadership is not charisma. It is a <strong>decision system</strong> people can trust under pressure."</p>
+    <span class="philosophy__attr">— Christa Burger</span>
+  </div>
+</div>
 
 <!-- BLOG PREVIEW -->
 <section class="blog-preview">
   <div class="container">
     <div class="blog-preview__header">
       <div>
-        <span class="blog-preview__eyebrow">Latest Thinking</span>
-        <h2>From the Blog</h2>
+        <span class="blog-preview__eyebrow">Featured Writing</span>
+        <h2>From the Desk</h2>
       </div>
-      <a href="/blog" class="btn btn--purple">All Posts</a>
+      <a href="/blog" class="btn btn--purple">All Writing</a>
     </div>
     <div class="posts-grid">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
@@ -105,9 +125,10 @@
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="container">
-    <h2>Ready to navigate the AI moment?</h2>
-    <p>Whether you need a strategic partner, a keynote speaker, or a governance framework — let's talk.</p>
+    <h2>Navigate complexity wisely.</h2>
+    <p>Whether you need a governance architect, a keynote speaker, or a partner for the systems that carry your real life — start the conversation.</p>
     <a href="/contact" class="btn btn--gold">Get In Touch</a>
+    <a href="/speaking" class="btn btn--outline" style="margin-left:1rem;">Book a Talk</a>
   </div>
 </div>
 
