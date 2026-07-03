@@ -631,7 +631,8 @@ section { padding: 5rem 0; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
   padding: 4rem 0;
 }
-.split img { width: 100%; display: block; box-shadow: 0 20px 60px rgba(36,22,52,0.18); }
+.split img { width: 100%; max-height: 520px; object-fit: cover; display: block; box-shadow: 0 20px 60px rgba(36,22,52,0.18); }
+.split img.split__img--free { max-height: none; object-fit: contain; box-shadow: none; }
 .split--reverse > :first-child { order: 2; }
 
 .compare-grid {

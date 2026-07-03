@@ -115,7 +115,7 @@
         <div class="post-card__body">
           <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
           <h3 class="post-card__title">{{ .Title }}</h3>
-          <p class="post-card__excerpt">{{ .Summary | truncate 120 }}</p>
+          <p class="post-card__excerpt">{{ if .Params.lead }}{{ .Params.lead }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
           <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
         </div>
       </div>
