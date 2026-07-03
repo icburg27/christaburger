@@ -42,7 +42,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-sans);
-  background: var(--parchment);
+  background: var(--white);
   color: var(--charcoal);
   line-height: 1.7;
   font-size: 16px;
@@ -162,6 +162,18 @@ section { padding: 5rem 0; }
 }
 .hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+.hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(150deg, rgba(36,22,52,0.88) 0%, rgba(52,34,74,0.82) 55%, rgba(61,42,86,0.78) 100%);
+  z-index: 0;
+}
+
 .hero__image { display: flex; justify-content: center; align-items: center; }
 .hero__photo {
   width: 360px; height: 460px;
@@ -276,10 +288,16 @@ section { padding: 5rem 0; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.philosophy--imaged {
+  background:
+    linear-gradient(rgba(36,22,52,0.86), rgba(36,22,52,0.86)),
+    url('/images/particle-waves.jpg') center/cover no-repeat;
+}
+.philosophy--imaged .philosophy__attr { color: var(--gold-light); }
 
 /* ── PROBLEM / STATEMENT BAND ── */
 .statement {
-  background: var(--parchment);
+  background: var(--white);
   padding: 5rem 0;
 }
 .statement__inner { max-width: 780px; margin: 0 auto; padding: 0 2rem; text-align: center; }
@@ -287,7 +305,7 @@ section { padding: 5rem 0; }
 .statement p { font-size: 1.1rem; line-height: 1.85; }
 
 /* ── SERVICES ── */
-.services { background: var(--parchment); }
+.services { background: var(--white); }
 .services__header { text-align: center; margin-bottom: 3.5rem; }
 .services__eyebrow {
   font-size: 0.8rem; font-weight: 600;
@@ -380,7 +398,7 @@ section { padding: 5rem 0; }
 }
 
 /* ── BLOG PREVIEW ── */
-.blog-preview { background: var(--parchment); }
+.blog-preview { background: var(--white); }
 .blog-preview__header {
   display: flex; justify-content: space-between; align-items: flex-end;
   margin-bottom: 3rem;
@@ -473,7 +491,8 @@ section { padding: 5rem 0; }
 .page-hero {
   background:
     radial-gradient(ellipse at 70% 30%, rgba(200,153,76,0.08) 0%, transparent 55%),
-    linear-gradient(140deg, var(--blackberry-deep), var(--blackberry));
+    linear-gradient(140deg, rgba(36,22,52,0.94), rgba(52,34,74,0.92)),
+    url('/images/amethyst.jpg') center/cover no-repeat;
   padding: 8.5rem 0 4rem;
   text-align: center;
 }
@@ -563,6 +582,18 @@ section { padding: 5rem 0; }
 
 /* ── PROSE PAGES ── */
 .prose { padding: 4rem 0 5rem; }
+.prose-lead-image {
+  width: 100%; max-height: 420px;
+  object-fit: cover;
+  display: block;
+  margin-top: 3rem;
+  box-shadow: 0 20px 60px rgba(36,22,52,0.18);
+}
+.image-band { padding: 0; margin: 3rem 0 0; }
+.image-band img {
+  width: 100%; max-height: 420px;
+  object-fit: cover; display: block;
+}
 .prose-body { font-size: 1.05rem; line-height: 1.9; color: var(--text-mid); }
 .prose-body h2 {
   margin: 2.75rem 0 1rem;

@@ -2,6 +2,10 @@
 
 <!-- HERO -->
 <section class="hero">
+  <video class="hero__video" autoplay muted loop playsinline poster="/images/lavender-night-poster.jpg" aria-hidden="true">
+    <source src="/videos/lavender-night.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay"></div>
   <div class="hero__inner">
     <div class="hero__content">
       <span class="hero__eyebrow">Governance · Leadership · AI · Human Systems</span>
@@ -68,9 +72,7 @@
   <div class="container">
     <div class="about-strip__inner">
       <div>
-        {{ if fileExists "static/images/christa-headshot.jpg" }}
-          <img src="/images/christa-headshot.jpg" alt="Christa Burger" style="width:100%;max-width:380px;object-fit:cover;aspect-ratio:3/4;box-shadow:12px 12px 0 rgba(200,153,76,0.35);">
-        {{ end }}
+        <img src="/images/water-lilies.jpg" alt="Water lilies resting on a calm pond at golden hour" style="width:100%;object-fit:cover;aspect-ratio:4/3;box-shadow:12px 12px 0 rgba(200,153,76,0.35);">
       </div>
       <div>
         <span class="about-strip__label">Living Proof</span>
@@ -85,7 +87,7 @@
 </section>
 
 <!-- PHILOSOPHY -->
-<div class="philosophy">
+<div class="philosophy philosophy--imaged">
   <div class="container">
     <p class="philosophy__quote">"Leadership is not charisma. It is a <strong>decision system</strong> people can trust under pressure."</p>
     <span class="philosophy__attr">— Christa Burger</span>

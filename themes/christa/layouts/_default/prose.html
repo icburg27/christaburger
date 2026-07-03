@@ -8,6 +8,9 @@
 </div>
 
 <div class="container--narrow">
+  {{ if .Params.image }}
+  <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default .Title }}" class="prose-lead-image">
+  {{ end }}
   <div class="prose">
     <div class="prose-body">
       {{ .Content }}
