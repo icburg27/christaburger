@@ -1,0 +1,140 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">The Book</span>
+    <h1>{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ .Params.lead }}</p>
+  </div>
+</div>
+
+<!-- BOOK HERO -->
+<section style="padding-bottom:2rem;">
+  <div class="container">
+    <div class="split">
+      <div style="display:flex;justify-content:center;">
+        {{ if .Params.cover }}
+          <img src="{{ .Params.cover }}" alt="Book cover: {{ .Title }}" class="split__img--free" style="max-width:340px;box-shadow:0 30px 80px rgba(36,22,52,0.35);">
+        {{ else }}
+        <div style="width:320px;aspect-ratio:2/3;background:linear-gradient(160deg,var(--blackberry-deep),var(--blackberry) 60%,#3D2A56);border:1px solid rgba(200,153,76,0.4);box-shadow:0 30px 80px rgba(36,22,52,0.35);display:flex;flex-direction:column;justify-content:center;padding:2.5rem;text-align:center;">
+          <span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Coming Soon</span>
+          <span style="font-family:var(--font-serif);font-size:2rem;color:var(--white);line-height:1.2;margin:1rem 0;">The Automated Household</span>
+          <span style="font-family:var(--font-serif);font-style:italic;font-size:1rem;color:var(--gold-light);">Stop Being the System</span>
+          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:2rem;">Christa Burger</span>
+        </div>
+        {{ end }}
+      </div>
+      <div>
+        <span class="eyebrow">For the person who remembers everything, for everyone</span>
+        <h2>You are not disorganized. You are the operating system.</h2>
+        <div class="divider"></div>
+        <p>The grocery list, the calendar, the appointments, the who-likes-what, the noticing, the reminding, the repair — modern household life runs on one person's invisible cognition. Nobody assigned it. It just accumulated.</p>
+        <p><strong>The Automated Household</strong> is a field guide to naming that invisible work, turning it into care loops and humane systems, and inviting AI in at the right layer — so the machine carries the repetition and you carry the meaning.</p>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          {{ if .Params.amazon_url }}
+          <a href="{{ .Params.amazon_url }}" class="btn btn--gold" rel="noopener" target="_blank">Buy on Amazon</a>
+          {{ else }}
+          <a href="#launch-team" class="btn btn--gold">Join the Launch Team</a>
+          {{ end }}
+          <a href="#inside" class="btn btn--purple">What's Inside</a>
+        </div>
+        {{ if not .Params.amazon_url }}
+        <p style="font-size:0.85rem;color:var(--text-light);margin-top:1rem;">Kindle, paperback, and Audible (narrated by the author) — launching soon.</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROMISE -->
+<div class="quote-panel">
+  <div class="container">
+    <p class="quote-panel__quote">"From <strong>I am overwhelmed because I cannot keep up</strong> to: I can make the invisible work visible, build simple care loops, use AI with boundaries — and stop being the only operating system in the house."</p>
+    <span class="quote-panel__attr">The transformation this book is built around</span>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section id="inside">
+  <div class="container">
+    <div class="services__header">
+      <span class="services__eyebrow">What's Inside</span>
+      <h2>Six parts, one working system</h2>
+      <div class="divider divider--center"></div>
+    </div>
+    <div class="talks-grid" style="padding-top:1rem;">
+      {{ range .Params.parts }}
+      <div class="talk-card">
+        <span class="talk-card__audience">{{ .label }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- LAUNCH TEAM / SAMPLE CHAPTER -->
+<section id="launch-team" style="background:var(--stone);">
+  <div class="container--narrow">
+    <span class="eyebrow">Free Sample Chapter</span>
+    <h2 style="margin-bottom:1rem;">Read "The Task Is Never the Task" — free</h2>
+    <p>Leave your email and I'll send you the sample chapter now, plus early access when the book launches. Launch-team members get the book first, at the lowest price it will ever be — and if it helps you, an honest review on Amazon is the biggest gift you can give an invisible book. (Reviews are never required. That's the whole point of honest.)</p>
+    <!-- Mailchimp: replace form action with your embedded form URL (Audience → Signup forms → Embedded); until then, submissions land in Netlify Forms -->
+    <form class="contact-form" name="book-launch-team" method="POST" data-netlify="true" style="margin-top:2rem;max-width:560px;">
+      <input type="hidden" name="form-name" value="book-launch-team">
+      <div class="form-group">
+        <label for="bk-name">First Name</label>
+        <input type="text" id="bk-name" name="name" placeholder="Optional — so I can say hi properly">
+      </div>
+      <div class="form-group">
+        <label for="bk-email">Email Address</label>
+        <input type="email" id="bk-email" name="email" required placeholder="you@example.com">
+      </div>
+      <button type="submit" class="btn btn--gold" style="align-self:flex-start;">Send Me the Chapter</button>
+    </form>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-strip__inner">
+      <div>
+        {{ if fileExists "static/images/christa-headshot.jpg" }}
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger, author of The Automated Household" style="width:100%;max-width:340px;object-fit:cover;aspect-ratio:3/4;box-shadow:12px 12px 0 rgba(200,153,76,0.35);">
+        {{ end }}
+      </div>
+      <div>
+        <span class="about-strip__label">About the Author</span>
+        <h2>The systems in this book are running right now.</h2>
+        <div class="divider"></div>
+        <p>Christa Burger is a cybersecurity governance executive who runs a household of seven — five kids across four schools and a college campus, a full animal roster, and a 3,300-gallon koi pond. The AI systems in this book aren't theory: they plan her family's meals, track the pantry, coordinate the calendar, and carry the invisible load she used to carry alone.</p>
+        <p>She writes and speaks about governance, leadership, and humane operating systems — and she named her household AI agents after 1980s My Little Ponies, because joy is a retention mechanism.</p>
+        <a href="/automated-household/stable-system/" class="btn btn--gold" style="margin-top:1rem;">See the System Behind the Book</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (post-launch) -->
+{{ with .Params.reviews }}
+<section>
+  <div class="container--narrow">
+    <span class="eyebrow">What Readers Say</span>
+    {{ range . }}
+    <blockquote style="border-left:3px solid var(--gold);background:var(--stone);padding:1.5rem 2rem;margin:1.5rem 0;font-family:var(--font-serif);font-style:italic;font-size:1.1rem;color:var(--blackberry);">{{ .quote }}<br><span style="font-family:var(--font-sans);font-size:0.8rem;font-style:normal;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);">— {{ .name }}</span></blockquote>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Stop being the system.</h2>
+    <p>Start with the free chapter, tour the Stable System, or bring the workshop to your community.</p>
+    <a href="#launch-team" class="btn btn--gold">Get the Free Chapter</a>
+    <a href="/automated-household/" class="btn btn--outline" style="margin-left:1rem;">The Automated Household</a>
+  </div>
+</div>
+{{ end }}
