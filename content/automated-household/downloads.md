@@ -1,0 +1,30 @@
+---
+title: "Free Field Guides"
+layout: "downloads"
+eyebrow: "The Automated Household"
+lead: "Everything from the workshop — free, no gate, no funnel."
+description: "Free downloads from The Automated Household: the full workshop deck, AI use-case finders, agent skill builder, and the household AI system builder worksheet."
+downloads:
+  - title: "The Automated Household — Full Workshop Deck"
+    icon: "✦"
+    file: "/downloads/the-automated-household-deck.pdf"
+    description: "The complete presentation: the invisible work, the prompts, the meal rhythm, and the Stable System in action. 27 slides."
+  - title: "Find Your First AI Use Case"
+    icon: "◈"
+    file: "/downloads/find-your-first-ai-use-case.pdf"
+    description: "A guided worksheet for locating the automation that will actually change your week — starting from what you want more of, not what the tech can do."
+  - title: "AI Use Cases for the Household"
+    icon: "⊕"
+    file: "/downloads/ai-use-cases.pdf"
+    description: "A browsable menu of real household use cases — meals, money, chores, kids, pets, and the rest — to spark your own list."
+  - title: "Create Your First Agent Skill or Gem"
+    icon: "❖"
+    file: "/downloads/create-your-first-agent-skill-or-gem.pdf"
+    description: "The moment a conversation becomes a system: how to save your dialed-in prompts as a reusable skill in Claude or Gem in Gemini."
+  - title: "Household AI System Builder"
+    icon: "✧"
+    file: "/downloads/household-ai-system-builder.pdf"
+    description: "The worksheet version of the Stable System pattern: define your workstreams, name your agents, set the rhythm, close the loop."
+---
+
+These are the handouts from my Automated Household workshops, exactly as I give them in person. Start with **Find Your First AI Use Case** if you're new; grab the **System Builder** when you're ready to go from prompts to agents. And if you build something — especially something delightfully weird — I genuinely want to hear about it.
