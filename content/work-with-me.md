@@ -1,5 +1,6 @@
 ---
-title: "Work With Me"
+title: "Governance & Advisory"
 layout: "work"
-lead: "Strategic partnership for organizations ready to navigate AI with intention."
+lead: "Turn complexity into accountable operating systems — decisions, controls, trust, and leadership that hold."
+description: "Governance architecture, trust & GRC strategy, leadership systems, and well-formed agent governance with Christa Burger."
 ---
