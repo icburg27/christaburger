@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">Speaking</span>
+    <h1>{{ .Title }}</h1>
+    <p class="page-hero__lead">{{ .Params.lead }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="talks-grid">
+    {{ range .Params.talks }}
+    <div class="talk-card">
+      <span class="talk-card__audience">{{ .audience }}</span>
+      <h3>{{ .title }}</h3>
+      <p>{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<div class="container--narrow">
+  <div class="prose" style="padding-top:1rem;">
+    <div class="prose-body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Bring this to your stage.</h2>
+    <p>Keynotes, workshops, board sessions, and community education. Tell me about your audience and your date.</p>
+    <a href="/contact" class="btn btn--gold">Request Speaking Kit</a>
+    <a href="/media-kit" class="btn btn--outline" style="margin-left:1rem;">Media Kit</a>
+  </div>
+</div>
+{{ end }}

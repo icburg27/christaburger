@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    {{ if .Params.eyebrow }}<span class="page-hero__eyebrow">{{ .Params.eyebrow }}</span>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container--narrow">
+  <div class="prose">
+    <div class="prose-body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+
+{{ if .Params.cta_title }}
+<div class="cta-banner">
+  <div class="container">
+    <h2>{{ .Params.cta_title }}</h2>
+    {{ if .Params.cta_text }}<p>{{ .Params.cta_text }}</p>{{ end }}
+    <a href="{{ .Params.cta_url | default "/contact" }}" class="btn btn--gold">{{ .Params.cta_label | default "Get In Touch" }}</a>
+  </div>
+</div>
+{{ end }}
+{{ end }}
