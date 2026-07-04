@@ -60,7 +60,7 @@
         <span class="service-card__icon">{{ .icon }}</span>
         <h3 class="service-card__title">{{ .title }}</h3>
         <p class="service-card__desc">{{ .description }}</p>
-        <a href="{{ .url }}" class="service-card__link">Learn More →</a>
+        <a href="{{ .url }}" class="service-card__link">{{ .link_label | default "Learn More →" }}</a>
       </div>
       {{ end }}
     </div>
