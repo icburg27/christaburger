@@ -1,8 +1,8 @@
 ---
 title: "The Automated Household"
 layout: "book"
-lead: "Stop being the system. A field guide to offloading mental load, building home systems, and using AI to make you more human."
-description: "The Automated Household by Christa Burger — stop being the system. Offload mental load, build household care loops, and use AI without losing the human. Kindle, paperback, and Audible."
+lead: "A field guide to transferring mental load, building household systems, and using AI to make you more human."
+description: "The Automated Household by Christa Burger — a field guide to transferring mental load, building household systems, and using AI to make you more human. Kindle, paperback, and Audible."
 # When live, set: amazon_url: "https://www.amazon.com/dp/XXXXXXXXXX"
 # When cover art exists, set: cover: "/images/book-cover.jpg"
 parts:

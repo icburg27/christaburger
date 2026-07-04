@@ -8,18 +8,18 @@
   <div class="hero__overlay"></div>
   <div class="hero__inner">
     <div class="hero__content">
-      <span class="hero__eyebrow">Governance · Leadership · AI · Human Systems</span>
-      <h1 class="hero__title">Build systems people can <em>trust.</em></h1>
-      <p class="hero__tagline">I help leaders turn complexity into accountable operating systems: clear decisions, practical controls, protected judgment, sustainable leadership, and trust that survives contact with real work.</p>
-      <p class="hero__sub">{{ .Site.Params.tagline }}</p>
+      <span class="hero__eyebrow">Governance · Leadership · AI · Real Life</span>
+      <h1 class="hero__title">You were never meant to be the <em>system.</em></h1>
+      <p class="hero__tagline">You're the one who knows the dentist's name, the dog's medication schedule, which kid needs new shoes, and what's actually for dinner. That isn't disorganization — it's unpaid infrastructure. I build operating systems for real life, so the system can carry the repetition and you can carry the meaning.</p>
+      <p class="hero__sub">Not a perfect home. Not a robotic home. A more human one.</p>
       <div class="hero__ctas">
-        <a href="/work-with-me" class="btn btn--gold">Explore My Work</a>
-        <a href="/speaking" class="btn btn--outline">Request Speaking Kit</a>
+        <a href="/book" class="btn btn--gold">Get the Free Chapter</a>
+        <a href="#the-work" class="btn btn--outline">Explore the Work</a>
       </div>
     </div>
     <div class="hero__image">
       {{ if fileExists "static/images/christa-headshot.jpg" }}
-        <img src="/images/christa-headshot.jpg" alt="Christa Burger, cybersecurity governance executive and speaker" class="hero__photo">
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger, cybersecurity governance executive and author of The Automated Household" class="hero__photo">
       {{ else }}
         <div class="hero__photo-placeholder">Photo Coming Soon</div>
       {{ end }}
@@ -39,19 +39,19 @@
 <!-- THE PROBLEM -->
 <div class="statement">
   <div class="statement__inner">
-    <span class="eyebrow">The Problem</span>
-    <h2>More tools will not save you.</h2>
+    <span class="eyebrow">The Invisible Work</span>
+    <h2>The problem was never dinner.<br>The problem was The Deciding.</h2>
     <div class="divider divider--center"></div>
-    <p>AI, leadership, and modern life are not solved by another platform or another policy nobody reads. They require governance: clear decisions, real ownership, honest boundaries, working rhythms, and care that doesn't collapse under load. Most organizations are not governing AI. They are hoping policies will behave like systems.</p>
+    <p>Every household, team, and life runs on invisible cognition — the noticing, remembering, sequencing, and deciding that disappears when it succeeds. The better you are at it, the more invisible it becomes. Which is rude. And structurally dangerous. Your nervous system was not designed to be a database with a Costco membership — and invisible work does not become lighter because we call it love.</p>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services" style="padding-top:0;">
+<!-- WHAT I HELP PEOPLE BUILD -->
+<section id="the-work" style="padding-top:0;">
   <div class="container">
     <div class="services__header">
-      <span class="services__eyebrow">What I Do</span>
-      <h2>Four ways to work together</h2>
+      <span class="services__eyebrow">What I Help People Build</span>
+      <h2>Make the invisible work visible enough to share.</h2>
       <div class="divider divider--center"></div>
     </div>
     <div class="services__grid">
@@ -67,6 +67,42 @@
   </div>
 </section>
 
+<!-- THE BOOK -->
+<section style="background:var(--stone);">
+  <div class="container">
+    <div class="split">
+      <div style="display:flex;justify-content:center;">
+        <div style="width:300px;aspect-ratio:2/3;background:linear-gradient(160deg,var(--blackberry-deep),var(--blackberry) 60%,#3D2A56);border:1px solid rgba(200,153,76,0.4);box-shadow:0 30px 80px rgba(36,22,52,0.35);display:flex;flex-direction:column;justify-content:center;padding:2.25rem;text-align:center;">
+          <span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Coming Soon</span>
+          <span style="font-family:var(--font-serif);font-size:1.9rem;color:var(--white);line-height:1.2;margin:1rem 0;">The Automated Household</span>
+          <span style="font-family:var(--font-serif);font-style:italic;font-size:0.92rem;color:var(--gold-light);line-height:1.5;">A field guide to transferring mental load, building household systems, and using AI to make you more human</span>
+          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:1.75rem;">Christa Burger</span>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">The Book</span>
+        <h2>The Automated Household</h2>
+        <div class="divider"></div>
+        <p><em>A field guide to transferring mental load, building household systems, and using AI to make you more human.</em></p>
+        <p>If the system collapses when you rest, you don't have a system. You have a person. This book is for that person: the household's memory, scheduler, and single point of failure. It teaches you to name the invisible work, turn it into care loops, hand the repetition to systems and small AI helpers — and keep the judgment, the taste, and the blessing exactly where they belong. With you.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="/book#launch-team" class="btn btn--gold">Read the First Chapter Free</a>
+          <a href="/book" class="btn btn--purple">About the Book</a>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-light);margin-top:1rem;">Kindle, paperback, and Audible — read by the author.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BRIDGE -->
+<div class="philosophy philosophy--imaged">
+  <div class="container">
+    <p class="philosophy__quote">"Governance is not bureaucracy. Governance is how love stops relying on <strong>telepathy</strong>."</p>
+    <span class="philosophy__attr">— The Automated Household</span>
+  </div>
+</div>
+
 <!-- LIVING PROOF -->
 <section class="about-strip">
   <div class="container">
@@ -78,34 +114,15 @@
         <span class="about-strip__label">Living Proof</span>
         <h2>The smallest complete governance environment is a home.</h2>
         <div class="divider"></div>
-        <p>By day, I'm a cybersecurity governance executive. At home, I run a household of seven — five kids across four schools and a college campus, a full animal roster, and the invisible work that usually lands on one person. The AI systems that carry that load are not theoretical. They are running right now.</p>
-        <p>Same principles at both scales: clarify ownership, reduce invisible labor, protect attention, make care repeatable — and leave the human more present than before. The machine can carry repetition. The human must carry meaning.</p>
+        <p>By day I'm a cybersecurity governance executive. At home I run a household of seven — five kids, five dogs, a koi pond, and the invisible work that used to live entirely in my head. The systems in the book are not theory. They plan dinner tonight, track the pantry, and brief my week — a forest of small helpers making room for the humans to come back.</p>
+        <p>Same discipline at both scales: give truth a home, give work an owner, give the week a rhythm — and let the machine sit down before it forgets it is not God.</p>
         <a href="/automated-household" class="btn btn--gold" style="margin-top:1rem;">The Automated Household</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BOOK BAND -->
-<div style="background:var(--stone);padding:2.5rem 0;">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
-    <div>
-      <span class="eyebrow" style="margin-bottom:0.4rem;">The Book — Coming Soon</span>
-      <p style="font-family:var(--font-serif);font-size:1.5rem;color:var(--blackberry);margin:0;"><em>The Automated Household: Stop Being the System</em></p>
-    </div>
-    <a href="/book" class="btn btn--purple">Get the Free Chapter</a>
-  </div>
-</div>
-
-<!-- PHILOSOPHY -->
-<div class="philosophy philosophy--imaged">
-  <div class="container">
-    <p class="philosophy__quote">"Leadership is not charisma. It is a <strong>decision system</strong> people can trust under pressure."</p>
-    <span class="philosophy__attr">— Christa Burger</span>
-  </div>
-</div>
-
-<!-- BLOG PREVIEW -->
+<!-- FEATURED WRITING -->
 <section class="blog-preview">
   <div class="container">
     <div class="blog-preview__header">
@@ -135,13 +152,25 @@
   </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- LETTERS / VAULT -->
+<div style="background:var(--stone);padding:3rem 0;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+    <div style="max-width:44em;">
+      <span class="eyebrow" style="margin-bottom:0.4rem;">Letters from the Desk</span>
+      <p style="font-family:var(--font-serif);font-size:1.4rem;color:var(--blackberry);margin:0 0 0.4rem;">One good letter, every couple of weeks.</p>
+      <p style="font-size:0.95rem;margin:0;">Governance without theater, AI without hype, and the systems that carry a real life — plus the free Field Guide Vault and first word on the book. Written by me, at this desk, usually with a watch movement in pieces somewhere nearby.</p>
+    </div>
+    <a href="/automated-household/downloads/" class="btn btn--purple">Open the Vault</a>
+  </div>
+</div>
+
+<!-- CLOSING INVITATION -->
 <div class="cta-banner">
   <div class="container">
-    <h2>Navigate complexity wisely.</h2>
-    <p>Whether you need a governance architect, a keynote speaker, or a partner for the systems that carry your real life — start the conversation.</p>
-    <a href="/contact" class="btn btn--gold">Get In Touch</a>
-    <a href="/speaking" class="btn btn--outline" style="margin-left:1rem;">Book a Talk</a>
+    <h2>Start small. Let it grow.</h2>
+    <p>You don't need to automate your life. You need one small loop that proves your life doesn't have to live entirely in your head. Begin with the free chapter — or bring me your boardroom.</p>
+    <a href="/book" class="btn btn--gold">Get the Free Chapter</a>
+    <a href="/work-with-me" class="btn btn--outline" style="margin-left:1rem;">Work With Me</a>
   </div>
 </div>
 
