@@ -34,6 +34,10 @@ Christa Burger is a cybersecurity governance executive, speaker, and systems arc
 
 Full descriptions on the [Speaking page](/speaking).
 
+## Recent appearances
+
+- **Willa — Women Innovating, Learning & Leading AI**: featured one-hour session, "The Stable System" ([replay in the Willa portal](https://www.joinwilla.com/portal?tab=replays))
+
 ## Facts & logistics
 
 - **Based in:** Colorado (Front Range) — travels; virtual available

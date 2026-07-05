@@ -7,6 +7,19 @@
   </div>
 </div>
 
+{{ if .Params.featured_title }}
+<div class="container--narrow" style="margin-top:3rem;">
+  <div class="field-note" style="display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+    <div style="max-width:38em;">
+      <span class="field-note__label">Recently Featured</span>
+      <p style="font-family:var(--font-serif);font-size:1.2rem;color:var(--blackberry);margin:0 0 0.35rem;">{{ .Params.featured_title }}</p>
+      <p style="font-size:0.92rem;margin:0;">{{ .Params.featured_text }}</p>
+    </div>
+    <a href="{{ .Params.featured_url }}" target="_blank" rel="noopener" class="btn btn--purple" style="white-space:nowrap;">Watch the Replay</a>
+  </div>
+</div>
+{{ end }}
+
 <div class="container">
   <div class="talks-grid">
     {{ range .Params.talks }}

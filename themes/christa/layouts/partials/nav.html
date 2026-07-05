@@ -1,10 +1,28 @@
-<nav class="nav">
+<nav class="nav" id="site-nav">
   <div class="nav__inner">
     <a href="/" class="nav__logo">Christa Burger</a>
-    <ul class="nav__links">
+    <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-menu">
       {{ range .Site.Menus.main }}
       <li><a href="{{ .URL }}">{{ .Name }}</a></li>
       {{ end }}
     </ul>
   </div>
 </nav>
+<script>
+(function(){
+  var t = document.getElementById('nav-toggle');
+  var n = document.getElementById('site-nav');
+  if (!t || !n) return;
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('nav--open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  n.querySelectorAll('.nav__links a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('nav--open'); });
+  });
+})();
+</script>
