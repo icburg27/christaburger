@@ -4,8 +4,8 @@ slug: i-dont-think-we-need-smaller-lives-anymore
 date: '2026-07-07'
 lead: The Four Burners Theory says to turn one off. I think it was written for a different world.
 description: The Four Burners Theory told us to sacrifice. But that theory was built for a world where one human had to manually tend every fire. I don't think we live in that world anymore.
-image: https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80
-image_alt: A warm kitchen stove with gentle light — tended, not abandoned
+image: /images/four-burners-clover.jpg
+image_alt: Pink clover flowers in soft morning light — warm, unhurried, tended
 tags:
 - AI strategy
 - Automated Household
