@@ -5,7 +5,4 @@
 [build.environment]
   HUGO_VERSION = "0.160.1"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Removed catch-all redirect — Hugo generates all pages as real files, no SPA routing needed

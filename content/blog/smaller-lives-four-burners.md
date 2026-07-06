@@ -1,7 +1,7 @@
 ---
 title: "I Don't Think We Need Smaller Lives Anymore"
-slug: i-dont-think-we-need-smaller-lives-anymore
-date: '2026-07-07'
+slug: smaller-lives-four-burners
+date: '2026-07-06'
 lead: The Four Burners Theory says to turn one off. I think it was written for a different world.
 description: The Four Burners Theory told us to sacrifice. But that theory was built for a world where one human had to manually tend every fire. I don't think we live in that world anymore.
 image: /images/four-burners-clover.jpg
