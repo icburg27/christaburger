@@ -72,7 +72,7 @@
     <!-- SERIES PREV/NEXT -->
     {{ with .Params.series }}
     {{ $s := index . 0 }}
-    {{ $seriesPage := $.Site.GetPage (printf "/series/%s" ($s | urlize)) }}
+    {{ $seriesPage := index ($.GetTerms "series") 0 }}
     {{ if $seriesPage }}
     {{ $in := $seriesPage.Pages.ByDate }}
     {{ $prev := "" }}{{ $next := "" }}{{ $found := false }}

@@ -82,8 +82,8 @@
       <div>
         <span class="eyebrow">The Series</span>
         <h2 style="margin-bottom:0.5rem;">Things I've Learned Experimenting With AI</h2>
-        {{ $s1 := .Site.GetPage "/series/things-ive-learned-experimenting-with-ai" }}
-        <p style="margin-bottom:0;">{{ with $s1 }}{{ len .Pages }} short essays{{ else }}Short essays{{ end }} on practical AI: workflows, agents, governance, invisible work, and getting your life back. Start anywhere.</p>
+        {{ $n1 := 0 }}{{ range $blog }}{{ if in (.Params.series | default slice) "Things I've Learned Experimenting With AI" }}{{ $n1 = add $n1 1 }}{{ end }}{{ end }}
+        <p style="margin-bottom:0;">{{ $n1 }} short essays on practical AI: workflows, agents, governance, invisible work, and getting your life back. Start anywhere.</p>
       </div>
       <a href="/series/things-ive-learned-experimenting-with-ai/" class="btn btn--gold">Browse the Series</a>
     </div>
@@ -91,8 +91,8 @@
       <div>
         <span class="eyebrow">The Series</span>
         <h2 style="margin-bottom:0.5rem;">The Quest Guide Era</h2>
-        {{ $s2 := .Site.GetPage "/series/the-quest-guide-era" }}
-        <p style="margin-bottom:0;">{{ with $s2 }}{{ len .Pages }} essays{{ else }}Essays{{ end }} on why enterprise work needs more than dashboards — and what the quest layer actually is.</p>
+        {{ $n2 := 0 }}{{ range $blog }}{{ if in (.Params.series | default slice) "The Quest Guide Era" }}{{ $n2 = add $n2 1 }}{{ end }}{{ end }}
+        <p style="margin-bottom:0;">{{ $n2 }} essays on why enterprise work needs more than dashboards — and what the quest layer actually is.</p>
       </div>
       <a href="/series/the-quest-guide-era/" class="btn btn--gold">Browse the Series</a>
     </div>
