@@ -1,0 +1,30 @@
+{{- /* Essay card for archive/index grids.
+     Restrained treatment: tempered 16:7 thumbnail crop, or a typographic
+     category plate — never the full bronze artwork wall. */ -}}
+{{- $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+{{- $plate := "plate--governance" }}{{ $mark := "⊕" }}
+{{- if eq $cat "Quest Layer" }}{{ $plate = "plate--quest" }}{{ $mark = "◈" }}{{ end }}
+{{- if eq $cat "Automated Household" }}{{ $plate = "plate--household" }}{{ $mark = "✦" }}{{ end }}
+{{- if eq $cat "Leadership and Aliveness" }}{{ $plate = "plate--leadership" }}{{ $mark = "❖" }}{{ end }}
+<article class="card-essay">
+  <a class="card-essay__media" href="{{ .Permalink }}" tabindex="-1" aria-hidden="true">
+    {{- if and .Params.image (not (.Params.plate_only | default false)) }}
+    <img src="{{ .Params.image }}" alt="" loading="lazy" width="640" height="280">
+    {{- else }}
+    <span class="card-essay__plate {{ $plate }}">{{ $mark }}</span>
+    {{- end }}
+  </a>
+  <div class="card-essay__body">
+    <span class="card-essay__cat">
+      {{- with $cat }}{{ with site.GetPage (printf "/categories/%s" (. | urlize)) }}<a href="{{ .Permalink }}" style="color:inherit;">{{ .Title }}</a>{{ else }}{{ . }}{{ end }}{{ else }}Essay{{ end }}
+      {{- with .Params.series }} <span class="series-glyph" title="Part of a series">✦ Series</span>{{ end -}}
+    </span>
+    <h3 class="card-essay__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p class="card-essay__lead">{{ .Params.lead | default (.Summary | truncate 140) }}</p>
+    <span class="card-essay__meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </span>
+  </div>
+</article>

@@ -15,9 +15,10 @@ tags:
 - AI for leaders
 - AI workflows
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Most leaders are not lacking judgment.

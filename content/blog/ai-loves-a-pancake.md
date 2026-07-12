@@ -15,9 +15,10 @@ tags:
 - human-centered AI
 - decision intelligence
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 AI has a tendency to turn complex situations into pancakes.

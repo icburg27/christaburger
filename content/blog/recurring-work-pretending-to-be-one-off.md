@@ -15,9 +15,10 @@ tags:
 - practical AI
 - AI for leaders
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Most work is recurring work pretending to be one-off.

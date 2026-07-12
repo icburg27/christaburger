@@ -15,9 +15,10 @@ tags:
 - practical AI
 - responsible AI
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 "Set it and forget it" is not how most useful automation works.

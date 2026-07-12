@@ -15,9 +15,10 @@ tags:
 - AI operating model
 - practical AI
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 I think the shift in AI is from assistant to ecosystem.

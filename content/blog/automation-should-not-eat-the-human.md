@@ -15,9 +15,10 @@ tags:
 - closed-loop systems
 - capacity
 categories:
-- Practical AI
+- Leadership and Aliveness
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Automation has a suspicious habit of becoming another thing to manage.

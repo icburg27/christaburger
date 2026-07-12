@@ -1,5 +1,5 @@
 ---
-title: "The Future of Enterprise Software May Be in the Quest Layer"
+title: The Future of Enterprise Software May Be in the Quest Layer
 slug: quest-guide-quest-layer
 date: '2026-07-06'
 lead: We are no longer limited to the software categories vendors hand us. We can now build interfaces around the way our work actually works.
@@ -10,7 +10,12 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+featured: true
+access: public
 ---
 
 *5 of 5 in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

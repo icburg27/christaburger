@@ -15,9 +15,12 @@ tags:
 - household systems
 - AI for leaders
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+featured: true
+start_here: true
+access: public
 ---
 
 A lot of work does not look like work.

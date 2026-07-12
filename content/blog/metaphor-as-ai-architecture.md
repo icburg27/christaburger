@@ -16,9 +16,11 @@ tags:
 - systems thinking
 - AI governance
 categories:
-- Practical AI
+- Quest Layer
 series:
 - Things I've Learned Experimenting With AI
+featured: true
+access: public
 ---
 
 We often think metaphor is something that explains a system after the fact.

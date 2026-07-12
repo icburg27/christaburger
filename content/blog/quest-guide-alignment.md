@@ -1,5 +1,5 @@
 ---
-title: "Corporate Work Is Already a Quest. We Just Keep Calling It Alignment."
+title: Corporate Work Is Already a Quest. We Just Keep Calling It Alignment.
 slug: quest-guide-alignment
 date: '2026-07-06'
 lead: Alignment answers whether we are facing the same mountain. A quest guide helps us climb it.
@@ -10,7 +10,11 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 *2 of 5 in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

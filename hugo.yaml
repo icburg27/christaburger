@@ -1,6 +1,7 @@
 baseURL: "https://christaburger.com"
 languageCode: "en-us"
 title: "Christa Burger"
+enableRobotsTXT: true
 theme: "christa"
 
 params:
@@ -39,35 +40,31 @@ params:
       link_label: "Leadership at Home →"
       description: "Decision rights, done states, and escalation that works at a kitchen table — because if clarity can survive dinner, five dogs, and a family calendar, it can survive a boardroom."
 
+# Top-level IA: Ideas · Work · Book · About · Contact
+# (Dropdown children live in partials/nav.html for accessible disclosure markup.)
 menu:
   main:
-    - name: "Home"
-      url: "/"
+    - name: "Ideas"
+      url: "/blog"
       weight: 1
+    - name: "Work"
+      url: "/work-with-me"
+      weight: 2
     - name: "Book"
       url: "/book"
-      weight: 2
+      weight: 3
     - name: "About"
       url: "/about"
-      weight: 3
-    - name: "Governance"
-      url: "/work-with-me"
       weight: 4
-    - name: "Speaking"
-      url: "/speaking"
-      weight: 5
-    - name: "Leadership"
-      url: "/leadership-work-life"
-      weight: 6
-    - name: "Household"
-      url: "/automated-household"
-      weight: 7
-    - name: "Writing"
-      url: "/blog"
-      weight: 8
     - name: "Contact"
       url: "/contact"
-      weight: 9
+      weight: 5
+
+outputs:
+  home: ["HTML", "RSS", "sitemap"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML"]
+  term: ["HTML", "RSS"]
 
 taxonomies:
   tag: "tags"
@@ -82,6 +79,8 @@ related:
     - name: "tags"
       weight: 80
     - name: "series"
+      weight: 60
+    - name: "categories"
       weight: 40
 
 markup:

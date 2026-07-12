@@ -15,9 +15,10 @@ tags:
 - practical AI
 - role clarity
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Unnamed work becomes weather.

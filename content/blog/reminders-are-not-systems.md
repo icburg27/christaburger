@@ -15,9 +15,10 @@ tags:
 - operational cadence
 - systems thinking
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 I have a deep affection for reminders. And planners. And all the other systems you can place around yourself to luxuriate in the feeling that you might be on top of things, if you just followed all the tasks and schedules you set for yourself.

@@ -15,9 +15,10 @@ tags:
 - AI workflows
 - AI for leaders
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 "AI improves productivity" is true and also not very useful.

@@ -1,5 +1,5 @@
 ---
-title: "Post 6 of 5: How the Quest Layer Actually Works"
+title: 'Post 6 of 5: How the Quest Layer Actually Works'
 slug: quest-guide-how-it-works
 date: '2026-07-07'
 lead: Every good metaphor has to come down from the clouds and pass through an operating model. Otherwise we have not built an operating model. We have built a screensaver with ambitions.
@@ -10,7 +10,11 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 *Bonus post in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

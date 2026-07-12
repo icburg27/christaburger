@@ -1,30 +1,73 @@
 {{ define "main" }}
+{{- /* Category/series/tag landing pages. The four editorial categories get
+     curated introductions; other terms get a clean default. */ -}}
+{{- $intros := dict
+  "Governance & AI" (dict "eyebrow" "Idea World" "lead" "Decision systems, accountability, and AI that answers to someone. Governance is not bureaucracy — it's clarity: who decides, what values guide it, and how the system changes when reality changes.")
+  "Quest Layer" (dict "eyebrow" "Idea World" "lead" "Enterprise work is already a quest — we just keep calling it alignment. Strategy becomes expeditions, teams become airships, and the AI-enabled Control Tower starts sending useful context back out.")
+  "Automated Household" (dict "eyebrow" "Idea World" "lead" "Care loops, invisible work, and a home that knows how to recover. The machine carries the repetition; the humans carry the meaning.")
+  "Leadership & Aliveness" (dict "eyebrow" "Idea World" "lead" "Margin, judgment, and the human the system is supposed to serve. Balance implies a scale. Architecture implies a house strong enough to live in.")
+}}
+{{- $intro := index $intros .Title }}
+
 <div class="page-hero">
   <div class="container--narrow">
-    <span class="page-hero__eyebrow">{{ .Data.Singular | title }}</span>
+    <span class="page-hero__eyebrow">{{ with $intro }}{{ .eyebrow }}{{ else }}{{ .Data.Singular | title }}{{ end }}</span>
     <h1>{{ .Title }}</h1>
+    {{ with $intro }}
+    <p class="page-hero__lead">{{ .lead }}</p>
+    {{ else }}
     <p class="page-hero__lead">{{ len .Pages }} {{ if eq (len .Pages) 1 }}essay{{ else }}essays{{ end }}</p>
-  </div>
-</div>
-<div class="container">
-  <div class="blog-grid">
-    {{ range .Pages.ByDate.Reverse }}
-    <div class="post-card">
-      <a href="{{ .Permalink }}">
-      {{ if .Params.image }}
-        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
-      {{ else }}
-        <div class="post-card__image-placeholder">✦</div>
-      {{ end }}
-      </a>
-      <div class="post-card__body">
-        <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
-        <h3 class="post-card__title"><a href="{{ .Permalink }}" style="color:inherit;">{{ .Title }}</a></h3>
-        <p class="post-card__excerpt">{{ if .Params.lead }}{{ .Params.lead }}{{ else }}{{ .Summary | truncate 140 }}{{ end }}</p>
-        <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
-      </div>
-    </div>
     {{ end }}
   </div>
 </div>
+
+{{ if $intro }}
+{{ $catStart := first 2 (where .Pages "Params.featured" true) }}
+{{ with $catStart }}
+<section class="library-section" aria-labelledby="cat-essential">
+  <div class="container">
+    <div class="library-section__head">
+      <h2 id="cat-essential" style="font-size:1.3rem;">Begin with these</h2>
+    </div>
+    <div class="start-list">
+      {{ range . }}
+      <a class="start-item" href="{{ .Permalink }}">
+        <div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.lead | truncate 110 }}</p>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+<section class="library-section">
+  <div class="container">
+    {{ if $intro }}
+    <div class="library-section__head">
+      <h2 style="font-size:1.3rem;">All essays in {{ .Title }}</h2>
+      <span style="font-size:0.9rem;color:var(--muted-text);">{{ len .Pages }} {{ if eq (len .Pages) 1 }}essay{{ else }}essays{{ end }}</span>
+    </div>
+    {{ end }}
+    <div class="posts-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "card-essay.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if $intro }}
+<section class="letters">
+  <div class="container--narrow">
+    <span class="eyebrow">Letters from the Desk</span>
+    <h2 style="margin-bottom:1rem;">One good letter, every couple of weeks.</h2>
+    <p>More like this, straight to your inbox — governance without theater, AI without hype, and the systems that carry a real life.</p>
+    {{ partial "mc-form.html" (dict "uid" (printf "term-%s" (.Title | urlize)) "button" "Subscribe" "success" "Welcome in. The next letter comes to you.") }}
+  </div>
+</section>
+{{ end }}
 {{ end }}

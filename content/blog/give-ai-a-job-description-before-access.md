@@ -15,9 +15,10 @@ tags:
 - AI workflows
 - cybersecurity governance
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Before giving AI more access, give it a job description.

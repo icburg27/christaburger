@@ -3,7 +3,16 @@
 <head>{{ partial "head.html" . }}</head>
 <body>
   {{ partial "nav.html" . }}
-  <main>{{ block "main" . }}{{ end }}</main>
+  <main id="main-content">{{ block "main" . }}{{ end }}</main>
   {{ partial "footer.html" . }}
+  <script>
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function(v){
+        v.removeAttribute('autoplay'); v.pause();
+      });
+    }
+  })();
+  </script>
 </body>
 </html>

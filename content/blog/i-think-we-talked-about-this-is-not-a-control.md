@@ -15,9 +15,10 @@ tags:
 - traceability
 - operational excellence
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 The worst time to document a decision is after something goes wrong.

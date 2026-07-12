@@ -1,5 +1,6 @@
 ---
 title: "The Field Guide Vault"
+meta_title: "The Field Guide Vault — Open with One Email"
 layout: "gate"
 eyebrow: "The Automated Household"
 lead: "Five field guides from my AI workshops — yours for an email."

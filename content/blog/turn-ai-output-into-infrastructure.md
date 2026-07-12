@@ -15,9 +15,10 @@ tags:
 - practical AI
 - workflow automation
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 The best AI outputs are not just deliverables.

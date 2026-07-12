@@ -15,9 +15,12 @@ tags:
 - leadership
 - AI for work life balance
 categories:
-- Practical AI
+- Leadership and Aliveness
 series:
 - Things I've Learned Experimenting With AI
+featured: true
+start_here: true
+access: public
 ---
 
 A lot of AI productivity advice seems to assume the goal is to become a more efficient toaster.

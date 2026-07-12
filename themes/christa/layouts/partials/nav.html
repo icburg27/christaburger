@@ -1,13 +1,32 @@
-<nav class="nav" id="site-nav">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" id="site-nav" aria-label="Main">
   <div class="nav__inner">
     <a href="/" class="nav__logo">Christa Burger</a>
     <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="nav-menu">
-      {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
+      <li>
+        <button class="nav__drop-btn" aria-expanded="false" aria-controls="menu-ideas">Ideas</button>
+        <ul class="nav__dropdown" id="menu-ideas">
+          <li class="nav__dropdown-all"><a href="/blog/">All Writing</a></li>
+          <li><a href="/categories/quest-layer/">Quest Layer</a></li>
+          <li><a href="/automated-household/">Automated Household</a></li>
+          <li><a href="/leadership-work-life/">Leadership</a></li>
+          <li><a href="/categories/governance-and-ai/">AI &amp; Governance</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="nav__drop-btn" aria-expanded="false" aria-controls="menu-work">Work</button>
+        <ul class="nav__dropdown" id="menu-work">
+          <li><a href="/work-with-me/">Governance &amp; Advisory</a></li>
+          <li><a href="/speaking/">Speaking</a></li>
+          <li><a href="/speaking/#workshops">Workshops</a></li>
+        </ul>
+      </li>
+      <li><a href="/book/">Book</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/" class="nav__cta">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -21,8 +40,36 @@
     t.setAttribute('aria-expanded', open ? 'true' : 'false');
     t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
-  n.querySelectorAll('.nav__links a').forEach(function(a){
-    a.addEventListener('click', function(){ n.classList.remove('nav--open'); });
+
+  var drops = n.querySelectorAll('.nav__drop-btn');
+  function closeAll(except){
+    drops.forEach(function(b){
+      if (b === except) return;
+      b.setAttribute('aria-expanded', 'false');
+      b.parentElement.classList.remove('open');
+    });
+  }
+  drops.forEach(function(b){
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = b.getAttribute('aria-expanded') === 'true';
+      closeAll(b);
+      b.setAttribute('aria-expanded', open ? 'false' : 'true');
+      b.parentElement.classList.toggle('open', !open);
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target)) closeAll();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeAll(); n.classList.remove('nav--open'); t.setAttribute('aria-expanded','false'); }
+  });
+  n.querySelectorAll('.nav__dropdown a, .nav__links > li > a').forEach(function(a){
+    a.addEventListener('click', function(){
+      n.classList.remove('nav--open');
+      t.setAttribute('aria-expanded','false');
+      closeAll();
+    });
   });
 })();
 </script>

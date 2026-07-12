@@ -1,5 +1,5 @@
 ---
-title: "I Don't Think We Need Smaller Lives Anymore"
+title: I Don't Think We Need Smaller Lives Anymore
 slug: smaller-lives-four-burners
 date: '2026-07-06'
 lead: The Four Burners Theory says to turn one off. I think it was written for a different world.
@@ -10,6 +10,9 @@ tags:
 - AI strategy
 - Automated Household
 - Leadership
+categories:
+- Leadership and Aliveness
+access: public
 ---
 
 A few years ago, I came across the **Four Burners Theory**.

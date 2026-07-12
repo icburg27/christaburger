@@ -1,18 +1,43 @@
 <footer class="footer">
   <div class="container">
-    <div class="footer__inner">
-      <span class="footer__name">Christa Burger</span>
-      <span class="footer__copy">© {{ now.Year }} Christa Burger. All rights reserved.</span>
-      <nav class="footer__links">
-        <a href="/book">Book</a>
-        <a href="/about">About</a>
-        <a href="/work-with-me">Governance</a>
-        <a href="/speaking">Speaking</a>
-        <a href="/leadership-work-life">Leadership</a>
-        <a href="/automated-household">Household</a>
-        <a href="/blog">Writing</a>
-        <a href="/contact">Contact</a>
-      </nav>
+    <div class="footer__grid">
+      <div>
+        <span class="footer__name">Christa Burger</span>
+        <p class="footer__statement">Operating systems for real life — household systems, AI with a job description, governance, and leadership — so the system carries the repetition and the humans carry the meaning.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__nav">
+          <li><a href="/blog/">All Writing</a></li>
+          <li><a href="/book/">The Book</a></li>
+          <li><a href="/automated-household/">The Automated Household</a></li>
+          <li><a href="/work-with-me/">Governance &amp; Advisory</a></li>
+          <li><a href="/speaking/">Speaking &amp; Workshops</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Letters from the Desk</h4>
+        <p style="font-size:0.9rem;color:rgba(244,241,234,0.72);margin-bottom:0;">One good letter, every couple of weeks. No noise, no daily drip.</p>
+        <form class="footer__form mc-form" action="https://gmail.us3.list-manage.com/subscribe/post?u=224f7efe194d7fb252f37ce44&amp;id=92488633b9" method="POST" novalidate>
+          <label class="visually-hidden" for="footer-email">Email address</label>
+          <input type="email" id="footer-email" name="EMAIL" required placeholder="you@example.com" autocomplete="email">
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_224f7efe194d7fb252f37ce44_92488633b9" tabindex="-1" value="">
+          </div>
+          <button type="submit">Subscribe</button>
+          <p class="mc-form__msg" role="status" style="display:none;font-size:0.85rem;margin:0.5rem 0 0;flex-basis:100%;"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© {{ now.Year }} Christa Burger. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/index.xml">RSS</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -35,10 +60,10 @@
         btn.disabled = false; btn.style.opacity = 1;
         msg.style.display = 'block';
         if (ok) {
-          msg.style.color = 'var(--plum)';
+          msg.style.color = 'inherit';
           msg.textContent = f.dataset.success || 'Thank you — you’re on the list. Watch your inbox.';
         } else {
-          msg.style.color = '#B76E79';
+          msg.style.color = '#C77E89';
           var d = document.createElement('div'); d.innerHTML = (r && r.msg) || 'Something went wrong — please try again.';
           msg.textContent = d.textContent;
         }

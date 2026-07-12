@@ -1,9 +1,9 @@
 ---
-title: "The Future of Enterprise Software May Be In the Quest Layer"
+title: The Future of Enterprise Software May Be In the Quest Layer
 slug: the-future-of-enterprise-software-quest-layer
 date: '2026-07-07'
 lead: At some point in this whole thought experiment, I realized I was no longer just talking about dashboards.
-description: "The quest layer is the live, role-aware operating view that connects work across tools and makes it navigable. This is the final post in the series exploring why enterprise work needs more than dashboards."
+description: The quest layer is the live, role-aware operating view that connects work across tools and makes it navigable. This is the final post in the series exploring why enterprise work needs more than dashboards.
 image: /images/the-future-of-enterprise-software-quest-layer.jpg
 image_alt: Abstract quest layer enterprise software illustration
 tags:
@@ -11,7 +11,11 @@ tags:
 - Enterprise software
 - Leadership
 - Future of work
-series: "The Quest Guide Era: Why Enterprise Work Needs More Than Dashboards"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 At some point in this whole thought experiment, I realized I was no longer

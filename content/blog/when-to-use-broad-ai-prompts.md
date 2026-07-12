@@ -15,9 +15,10 @@ tags:
 - prompt engineering
 - AI experimentation
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 One of the fastest ways to creativity with AI is to say:

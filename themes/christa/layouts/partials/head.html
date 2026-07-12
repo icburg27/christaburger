@@ -1,13 +1,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{- $t := .Params.meta_title | default .Title }}
+{{- $title := cond .IsHome (printf "%s — %s" .Site.Title .Site.Params.tagline) (printf "%s | %s" $t .Site.Title) }}
+{{- $desc := .Description | default .Params.lead | default .Site.Params.description }}
+{{- $img := .Params.image | default "/images/christa-headshot.jpg" }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ .Site.Params.author }}">
 {{ if .Params.noindex }}<meta name="robots" content="noindex,nofollow">{{ end }}
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-{{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}">{{ end }}
-<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if and .IsPage (eq .Section "blog") }}article{{ else }}website{{ end }}">
+<meta property="og:image" content="{{ $img | absURL }}">
+{{ if and .IsPage (eq .Section "blog") }}{{ with .PublishDate }}<meta property="article:published_time" content="{{ .Format "2006-01-02" }}">{{ end }}{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $img | absURL }}">
+
+{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">{{ else }}<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "index.xml" | absURL }}">{{ end }}
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+
+{{ if and .IsPage (eq .Section "blog") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ .Title }},
+  "description": {{ $desc }},
+  "image": {{ $img | absURL }},
+  "datePublished": {{ .PublishDate.Format "2006-01-02" }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02" }},
+  "url": {{ .Permalink }},
+  "author": { "@type": "Person", "name": "Christa Burger", "url": {{ "/about/" | absURL }} },
+  "publisher": { "@type": "Person", "name": "Christa Burger", "url": {{ .Site.BaseURL }} },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink }} }
+}
+</script>
+{{ end }}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Christa Burger",
+  "url": {{ .Site.BaseURL }},
+  "image": {{ "/images/christa-headshot.jpg" | absURL }},
+  "jobTitle": "VP of Cybersecurity",
+  "description": {{ .Site.Params.description }},
+  "knowsAbout": ["Cybersecurity governance", "AI governance", "Household operating systems", "Leadership"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ .Site.Title }},
+  "url": {{ .Site.BaseURL }}
+}
+</script>
+{{ end }}
+
 <script data-goatcounter="https://christaburgerwebsite.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

@@ -1,5 +1,5 @@
 ---
-title: "If We Need a Quest Guide, We Must Already Be on a Quest"
+title: If We Need a Quest Guide, We Must Already Be on a Quest
 slug: quest-guide-on-a-quest
 date: '2026-07-06'
 lead: How do you connect dashboards, evidence, decisions, and AI summaries into something usable for the people actually doing the work?
@@ -10,7 +10,11 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 *3 of 5 in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

@@ -1,10 +1,18 @@
 ---
-title: "How to Talk About AI Without the Hype (Or the Panic)"
+title: How to Talk About AI Without the Hype (Or the Panic)
 date: 2026-03-10
-lead: "Most public conversation about AI swings between utopia and apocalypse. There's a better way."
-image: "/images/purple-phlox.jpg"
-tags: ["AI for leaders", "practical AI", "human-centered AI", "speaking"]
-categories: ["Practical AI"]
+lead: Most public conversation about AI swings between utopia and apocalypse. There's a better way.
+image: /images/purple-phlox.jpg
+tags:
+- AI for leaders
+- practical AI
+- human-centered AI
+- speaking
+categories:
+- Governance and AI
+access: public
+description: Most public conversation about AI swings between utopia and apocalypse. There's a better way.
+image_alt: Purple phlox flowers in bloom
 ---
 
 If you've sat through an AI presentation in the last two years, you've probably experienced one of two things: breathless excitement about the coming transformation, or grave warnings about everything that could go wrong.

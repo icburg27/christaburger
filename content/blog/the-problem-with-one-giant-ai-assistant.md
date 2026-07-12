@@ -15,9 +15,11 @@ tags:
 - AI productivity
 - AI operating model
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+start_here: true
+access: public
 ---
 
 After 5+ years of experimenting with AI, one of my clearest lessons is this:

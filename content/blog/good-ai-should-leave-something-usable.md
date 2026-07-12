@@ -15,9 +15,10 @@ tags:
 - templates
 - knowledge work
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 A good AI interaction should often leave behind something usable.

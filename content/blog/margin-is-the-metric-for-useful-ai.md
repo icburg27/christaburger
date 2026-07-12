@@ -15,9 +15,10 @@ tags:
 - leadership
 - decision fatigue
 categories:
-- Practical AI
+- Leadership and Aliveness
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 I want to see more AI conversations include the word **margin**.

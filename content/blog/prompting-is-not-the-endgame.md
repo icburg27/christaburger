@@ -15,9 +15,10 @@ tags:
 - AI operating model
 - AI governance
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Prompting is useful.

@@ -1,8 +1,8 @@
 {{ define "main" }}
 
-<!-- HERO -->
+<!-- 1 · HERO -->
 <section class="hero">
-  <video class="hero__video" autoplay muted loop playsinline poster="/images/lavender-night-poster.jpg" aria-hidden="true">
+  <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/images/lavender-night-poster.jpg" aria-hidden="true">
     <source src="/videos/lavender-night.mp4" type="video/mp4">
   </video>
   <div class="hero__overlay"></div>
@@ -13,13 +13,13 @@
       <p class="hero__tagline">You're the one who knows the dentist's name, the dog's medication schedule, which kid needs new shoes, and what's actually for dinner. That isn't disorganization — it's unpaid infrastructure. I build operating systems for real life, so the system can carry the repetition and you can carry the meaning.</p>
       <p class="hero__sub">Not a perfect home. Not a robotic home. A more human one.</p>
       <div class="hero__ctas">
-        <a href="/book" class="btn btn--gold">Get the Free Chapter</a>
-        <a href="#the-work" class="btn btn--outline">Explore the Work</a>
+        <a href="/blog/" class="btn btn--gold">Explore the Ideas</a>
+        <a href="/work-with-me/" class="btn btn--outline">Work With Christa</a>
       </div>
     </div>
     <div class="hero__image">
       {{ if fileExists "static/images/christa-headshot.jpg" }}
-        <img src="/images/christa-headshot.jpg" alt="Christa Burger, cybersecurity governance executive and author of The Automated Household" class="hero__photo">
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger, cybersecurity governance executive and author of The Automated Household" class="hero__photo" width="340" height="440">
       {{ else }}
         <div class="hero__photo-placeholder">Photo Coming Soon</div>
       {{ end }}
@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<!-- PROOF BAR -->
+<!-- 2 · CREDIBILITY STRIP -->
 <div class="proof-bar">
   <div class="proof-bar__inner">
     {{ range .Site.Params.proofbar }}
@@ -36,47 +36,68 @@
   </div>
 </div>
 
-<!-- THE PROBLEM -->
-<div class="statement">
-  <div class="statement__inner">
-    <span class="eyebrow">The Invisible Work</span>
-    <h2>The problem was never dinner.<br>The problem was The Deciding.</h2>
-    <div class="divider divider--center"></div>
-    <p>Every household, team, and life runs on invisible cognition — the noticing, remembering, sequencing, and deciding that disappears when it succeeds. The better you are at it, the more invisible it becomes. Which is rude. And structurally dangerous. Your nervous system was not designed to be a database with a Costco membership — and invisible work does not become lighter because we call it love.</p>
-  </div>
-</div>
-
-<!-- WHAT I HELP PEOPLE BUILD -->
-<section id="the-work" style="padding-top:0;">
+<!-- 3 · THREE IDEA WORLDS -->
+<section class="worlds" id="ideas">
   <div class="container">
-    <div class="services__header">
-      <span class="services__eyebrow">What I Help People Build</span>
-      <h2>Make the invisible work visible enough to share.</h2>
+    <div class="services__header" style="margin-bottom:0;">
+      <span class="services__eyebrow">The Invisible Work</span>
+      <h2>The problem was never dinner.<br>The problem was The Deciding.</h2>
       <div class="divider divider--center"></div>
+      <p style="max-width:46em;margin:0 auto;font-size:1.1rem;line-height:1.8;">Every household, team, and life runs on invisible cognition — the noticing, remembering, sequencing, and deciding that disappears when it succeeds. The better you are at it, the more invisible it becomes. Which is rude. And structurally dangerous. Your nervous system was not designed to be a database with a Costco membership — and invisible work does not become lighter because we call it love.</p>
     </div>
-    <div class="services__grid">
-      {{ range .Site.Params.services }}
-      <div class="service-card">
-        <span class="service-card__icon">{{ .icon }}</span>
-        <h3 class="service-card__title">{{ .title }}</h3>
-        <p class="service-card__desc">{{ .description }}</p>
-        <a href="{{ .url }}" class="service-card__link">{{ .link_label | default "Learn More →" }}</a>
+    <div class="worlds__grid">
+      <article class="world-card world-card--governance">
+        <span class="world-card__mark" aria-hidden="true">⊕</span>
+        <h3>Governance for the World That Exists</h3>
+        <p>The day job: decision systems, risk clarity, and customer trust for organizations where the stakes are real. Governance is not bureaucracy. It's clarity — who decides, what values guide it, and how the system changes when reality changes.</p>
+        <a href="/categories/governance-and-ai/" class="world-card__link">Enter the Ideas →</a>
+      </article>
+      <article class="world-card world-card--quest">
+        <span class="world-card__mark" aria-hidden="true">◈</span>
+        <h3>The Quest Layer</h3>
+        <p>Enterprise work is already a quest — we just keep calling it alignment. A series on what work becomes when strategy turns into expeditions, teams into airships, and the AI-enabled Control Tower starts sending useful context back out.</p>
+        <a href="/categories/quest-layer/" class="world-card__link">Enter the Observatory →</a>
+      </article>
+      <article class="world-card world-card--household">
+        <span class="world-card__mark" aria-hidden="true">✦</span>
+        <h3>The Automated Household</h3>
+        <p>Care loops, defaults, a source of truth, and Hard-Week Mode: a home that knows how to recover, built for the actual humans who live there. AI prepares. Humans decide.</p>
+        <a href="/automated-household/" class="world-card__link">Tour the Household →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · FEATURED ESSAYS -->
+<section class="blog-preview" style="padding-top:0;">
+  <div class="container">
+    <div class="blog-preview__header">
+      <div>
+        <span class="blog-preview__eyebrow">Essential Essays</span>
+        <h2>From the Desk</h2>
       </div>
+      <a href="/blog/" class="btn btn--purple">All Writing</a>
+    </div>
+    {{ $featured := where (where .Site.RegularPages "Section" "blog") "Params.featured" true }}
+    {{ if lt (len $featured) 4 }}{{ $featured = first 6 (where .Site.RegularPages "Section" "blog") }}{{ end }}
+    <div class="posts-grid">
+      {{ range first 6 $featured }}
+        {{ partial "card-essay.html" . }}
       {{ end }}
     </div>
   </div>
 </section>
 
-<!-- THE BOOK -->
-<section style="background:var(--stone);">
+<!-- 5 · THE BOOK -->
+<section style="background:var(--paper-dim);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
   <div class="container">
     <div class="split">
       <div style="display:flex;justify-content:center;">
-        <div style="width:300px;aspect-ratio:2/3;background:linear-gradient(160deg,var(--blackberry-deep),var(--blackberry) 60%,#3D2A56);border:1px solid rgba(200,153,76,0.4);box-shadow:0 30px 80px rgba(36,22,52,0.35);display:flex;flex-direction:column;justify-content:center;padding:2.25rem;text-align:center;">
-          <span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Coming Soon</span>
-          <span style="font-family:var(--font-serif);font-size:1.9rem;color:var(--white);line-height:1.2;margin:1rem 0;">The Automated Household</span>
-          <span style="font-family:var(--font-serif);font-style:italic;font-size:0.92rem;color:var(--gold-light);line-height:1.5;">A field guide to transferring mental load, building household systems, and using AI to make you more human</span>
-          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:1.75rem;">Christa Burger</span>
+        <div style="width:300px;aspect-ratio:2/3;background:linear-gradient(160deg,var(--midnight-deep),var(--midnight) 60%,var(--plum-deep));border:1px solid rgba(201,169,107,0.45);border-radius:2px;box-shadow:0 30px 80px rgba(25,34,48,0.3);display:flex;flex-direction:column;justify-content:center;padding:2.25rem;text-align:center;">
+          <span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-bright);">Coming Soon</span>
+          <span style="font-family:var(--font-serif);font-size:1.9rem;color:var(--paper-on-dark);line-height:1.2;margin:1rem 0;">The Automated Household</span>
+          <span style="font-family:var(--font-serif);font-style:italic;font-size:0.92rem;color:var(--gold-bright);line-height:1.5;">A field guide to transferring mental load, building household systems, and using AI to make you more human</span>
+          <span style="font-size:0.85rem;color:rgba(244,241,234,0.65);margin-top:1.75rem;">Christa Burger</span>
         </div>
       </div>
       <div>
@@ -86,16 +107,15 @@
         <p><em>A field guide to transferring mental load, building household systems, and using AI to make you more human.</em></p>
         <p>If the system collapses when you rest, you don't have a system. You have a person. This book is for that person: the household's memory, scheduler, and single point of failure. It teaches you to name the invisible work, turn it into care loops, hand the repetition to systems and small AI helpers — and keep the judgment, the taste, and the blessing exactly where they belong. With you.</p>
         <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="/book#launch-team" class="btn btn--gold">Read the First Chapter Free</a>
-          <a href="/book" class="btn btn--purple">About the Book</a>
+          <a href="/book/#launch-team" class="btn btn--gold">Read the First Chapter Free</a>
+          <a href="/book/" class="btn btn--purple">About the Book</a>
         </div>
-        <p style="font-size:0.85rem;color:var(--text-light);margin-top:1rem;">Kindle, paperback, and Audible — read by the author.</p>
+        <p style="font-size:0.85rem;color:var(--muted-text);margin-top:1rem;">Kindle, paperback, and Audible — read by the author.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- THE BRIDGE -->
 <div class="philosophy philosophy--imaged">
   <div class="container">
     <p class="philosophy__quote">"Governance is not bureaucracy. Governance is how love stops relying on <strong>telepathy</strong>."</p>
@@ -103,74 +123,49 @@
   </div>
 </div>
 
-<!-- LIVING PROOF -->
-<section class="about-strip">
+<!-- 6 · ADVISORY & SPEAKING -->
+<section>
   <div class="container">
-    <div class="about-strip__inner">
-      <div>
-        <img src="/images/water-lilies.jpg" alt="Water lilies resting on a calm pond at golden hour" style="width:100%;object-fit:cover;aspect-ratio:4/3;box-shadow:12px 12px 0 rgba(200,153,76,0.35);">
+    <div class="services__header">
+      <span class="services__eyebrow">Advisory &amp; Speaking</span>
+      <h2>Bring me your boardroom.</h2>
+      <div class="divider divider--center"></div>
+    </div>
+    <div class="services__grid">
+      <div class="service-card">
+        <span class="service-card__icon" aria-hidden="true">⊕</span>
+        <h3 class="service-card__title">Governance &amp; Advisory</h3>
+        <p class="service-card__desc">Turn complexity into accountable operating systems — decisions, controls, trust, and leadership that hold. Governance architecture, trust &amp; GRC strategy, leadership systems, and well-formed agent governance.</p>
+        <a href="/work-with-me/" class="service-card__link">Governance &amp; Advisory →</a>
       </div>
-      <div>
-        <span class="about-strip__label">Living Proof</span>
-        <h2>The smallest complete governance environment is a home.</h2>
-        <div class="divider"></div>
-        <p>By day I'm a cybersecurity governance executive. At home I run a household of seven — five kids, five dogs, a koi pond, and the invisible work that used to live entirely in my head. The systems in the book are not theory. They plan dinner tonight, track the pantry, and brief my week — a forest of small helpers making room for the humans to come back.</p>
-        <p>Same discipline at both scales: give truth a home, give work an owner, give the week a rhythm — and let the machine sit down before it forgets it is not God.</p>
-        <a href="/automated-household" class="btn btn--gold" style="margin-top:1rem;">The Automated Household</a>
+      <div class="service-card">
+        <span class="service-card__icon" aria-hidden="true">❖</span>
+        <h3 class="service-card__title">Speaking &amp; Workshops</h3>
+        <p class="service-card__desc">Governance without theater. AI without hype or panic. Leadership people can actually live. Keynotes, executive workshops, and community education — from boards to libraries.</p>
+        <a href="/speaking/" class="service-card__link">Speaking &amp; Workshops →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED WRITING -->
-<section class="blog-preview">
-  <div class="container">
-    <div class="blog-preview__header">
-      <div>
-        <span class="blog-preview__eyebrow">Featured Writing</span>
-        <h2>From the Desk</h2>
-      </div>
-      <a href="/blog" class="btn btn--purple">All Writing</a>
-    </div>
-    <div class="posts-grid">
-      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <div class="post-card">
-        {{ if .Params.image }}
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="post-card__image">
-        {{ else }}
-          <div class="post-card__image-placeholder">✦</div>
-        {{ end }}
-        <div class="post-card__body">
-          <span class="post-card__date">{{ .Date.Format "January 2, 2006" }}</span>
-          <h3 class="post-card__title">{{ .Title }}</h3>
-          <p class="post-card__excerpt">{{ if .Params.lead }}{{ .Params.lead }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
-          <a href="{{ .Permalink }}" class="post-card__link">Read More →</a>
-        </div>
-      </div>
-      {{ end }}
-    </div>
+<!-- 7 · LETTERS FROM THE DESK -->
+<section class="letters" id="letters">
+  <div class="container--narrow">
+    <span class="eyebrow">Letters from the Desk</span>
+    <h2>One good letter, every couple of weeks.</h2>
+    <p>Governance without theater, AI without hype, and the systems that carry a real life — plus the free Field Guide Vault and first word on the book. Written by me, at this desk, usually with a watch movement in pieces somewhere nearby.</p>
+    {{ partial "mc-form.html" (dict "uid" "home-letters" "button" "Subscribe" "success" "Welcome in. The next letter comes to you.") }}
+    <p style="font-size:0.85rem;color:var(--muted-text);margin-top:1rem;margin-bottom:0;">Prefer to start with the free guides? <a href="/automated-household/downloads/">Open the Vault</a>.</p>
   </div>
 </section>
 
-<!-- LETTERS / VAULT -->
-<div style="background:var(--stone);padding:3rem 0;">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
-    <div style="max-width:44em;">
-      <span class="eyebrow" style="margin-bottom:0.4rem;">Letters from the Desk</span>
-      <p style="font-family:var(--font-serif);font-size:1.4rem;color:var(--blackberry);margin:0 0 0.4rem;">One good letter, every couple of weeks.</p>
-      <p style="font-size:0.95rem;margin:0;">Governance without theater, AI without hype, and the systems that carry a real life — plus the free Field Guide Vault and first word on the book. Written by me, at this desk, usually with a watch movement in pieces somewhere nearby.</p>
-    </div>
-    <a href="/automated-household/downloads/" class="btn btn--purple">Open the Vault</a>
-  </div>
-</div>
-
-<!-- CLOSING INVITATION -->
+<!-- 8 · CLOSING CTA -->
 <div class="cta-banner">
   <div class="container">
     <h2>Start small. Let it grow.</h2>
     <p>You don't need to automate your life. You need one small loop that proves your life doesn't have to live entirely in your head. Begin with the free chapter — or bring me your boardroom.</p>
-    <a href="/book" class="btn btn--gold">Get the Free Chapter</a>
-    <a href="/work-with-me" class="btn btn--outline" style="margin-left:1rem;">Work With Me</a>
+    <a href="/book/" class="btn btn--gold">Get the Free Chapter</a>
+    <a href="/work-with-me/" class="btn btn--outline" style="margin-left:1rem;">Work With Me</a>
   </div>
 </div>
 

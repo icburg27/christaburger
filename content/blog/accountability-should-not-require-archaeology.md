@@ -15,9 +15,10 @@ tags:
 - compliance
 - operational excellence
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 If accountability requires archaeology, the system is under-designed.

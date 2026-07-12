@@ -1,33 +1,108 @@
 {{ define "main" }}
-<div class="page-hero">
-  <div class="container--narrow">
-    <span class="page-hero__eyebrow">{{ .Date.Format "January 2, 2006" }}{{ with .Params.categories }} · {{ index . 0 }}{{ end }}</span>
-    <h1>{{ .Title }}</h1>
-    {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
-  </div>
-</div>
+{{- $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+{{- $access := .Params.access | default "public" }}
 
-<div class="container--narrow">
-  <article class="post-single">
+<article>
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="container--narrow">
+      <span class="article-header__cat">
+        {{ with $cat }}{{ with site.GetPage (printf "/categories/%s" (. | urlize)) }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ else }}{{ . }}{{ end }}{{ else }}Essay{{ end }}
+        {{ if ne $access "public" }}<span class="access-note">{{ if eq $access "email" }}Subscriber Essay{{ else }}Members Only{{ end }}</span>{{ end }}
+      </span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lead }}<p class="article-header__subtitle">{{ . }}</p>{{ end }}
+      <div class="article-header__meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <span class="sep" aria-hidden="true">◆</span>
+        <span>{{ .ReadingTime }} min read</span>
+        {{ with .Params.series }}
+        {{ $s := index . 0 }}
+        <span class="sep" aria-hidden="true">◆</span>
+        <span>Series: <a href="{{ "/series/" | relLangURL }}{{ $s | urlize }}/">{{ $s }}</a></span>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURED IMAGE -->
+  {{ if .Params.image }}
+  <figure class="article-figure">
+    <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default .Title }}" width="920" height="480">
+    {{ with .Params.image_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{ end }}
+
+  <!-- BODY -->
+  <div class="article-body">
     {{ with .Params.series }}
     {{ $s := index . 0 }}
     <div class="series-note">
-      <span>✦</span> Part of the series <a href="{{ "/series/" | relLangURL }}{{ $s | urlize }}/">{{ $s }}</a>
+      <span aria-hidden="true">✦</span> Part of the series <a href="{{ "/series/" | relLangURL }}{{ $s | urlize }}/">{{ $s }}</a>
     </div>
     {{ end }}
-    {{ if .Params.image }}
-      <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default .Title }}" class="post-single__image">
-    {{ end }}
-    <div class="post-single__body">
-      {{ .Content }}
-    </div>
+    {{ .Content }}
+  </div>
 
+  <!-- FOOTER -->
+  <footer class="article-footer">
     {{ with .Params.tags }}
-    <div class="tag-row" style="margin-top:2.5rem;">
+    <div class="tag-row" style="margin-top:2rem;">
       {{ range . }}<a class="tag-pill" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
     </div>
     {{ end }}
 
+    <!-- SHARE -->
+    <div class="share-row">
+      <span class="share-row__label">Share this essay</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/intent/post?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener">X</a>
+      <a href="mailto:?subject={{ .Title }}&body={{ .Permalink }}">Email</a>
+    </div>
+
+    <!-- AUTHOR -->
+    <div class="author-block">
+      <img src="/images/christa-headshot.jpg" alt="" width="64" height="64" loading="lazy">
+      <div>
+        <span class="author-block__name">Christa Burger</span>
+        <p>Cybersecurity governance executive and author of <a href="/book/"><em>The Automated Household</em></a>. She builds operating systems for real life — so the system carries the repetition and the humans carry the meaning.</p>
+      </div>
+    </div>
+
+    <!-- SERIES PREV/NEXT -->
+    {{ with .Params.series }}
+    {{ $s := index . 0 }}
+    {{ $seriesPage := $.Site.GetPage (printf "/series/%s" ($s | urlize)) }}
+    {{ if $seriesPage }}
+    {{ $in := $seriesPage.Pages.ByDate }}
+    {{ $prev := "" }}{{ $next := "" }}{{ $found := false }}
+    {{ range $i, $p := $in }}
+      {{ if eq $p.Permalink $.Permalink }}
+        {{ $found = true }}
+        {{ if gt $i 0 }}{{ $prev = index $in (sub $i 1) }}{{ end }}
+        {{ if lt (add $i 1) (len $in) }}{{ $next = index $in (add $i 1) }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if and $found (or $prev $next) }}
+    <nav class="series-nav" aria-label="Series navigation">
+      {{ with $prev }}
+      <a href="{{ .Permalink }}" rel="prev">
+        <span class="series-nav__dir">← Previous in series</span>
+        <span class="series-nav__title">{{ .Title }}</span>
+      </a>
+      {{ else }}<span></span>{{ end }}
+      {{ with $next }}
+      <a href="{{ .Permalink }}" rel="next">
+        <span class="series-nav__dir">Next in series →</span>
+        <span class="series-nav__title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </nav>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    <!-- RELATED -->
     {{ $related := .Site.RegularPages.Related . | first 3 }}
     {{ with $related }}
     <div class="related">
@@ -35,7 +110,7 @@
       <div class="related__grid">
         {{ range . }}
         <a href="{{ .Permalink }}" class="related__card">
-          {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}">{{ end }}
+          {{ if .Params.image }}<img src="{{ .Params.image }}" alt="" loading="lazy" width="300" height="100">{{ end }}
           <span>{{ .Title }}</span>
         </a>
         {{ end }}
@@ -43,13 +118,38 @@
     </div>
     {{ end }}
 
-    <div class="series-note" style="margin-top:3rem;">
-      <span>✦</span> Enjoying these? <a href="/blog/#letters">Get one good letter every couple of weeks</a> — or open the <a href="/automated-household/downloads/">Field Guide Vault</a>.
-    </div>
+    <!-- PREV / NEXT ESSAY -->
+    {{ $prevPost := .NextInSection }}{{ $nextPost := .PrevInSection }}
+    {{ if or $prevPost $nextPost }}
+    <nav class="series-nav" aria-label="More essays" style="margin-top:2rem;">
+      {{ with $prevPost }}
+      <a href="{{ .Permalink }}" rel="prev">
+        <span class="series-nav__dir">← Older essay</span>
+        <span class="series-nav__title">{{ .Title }}</span>
+      </a>
+      {{ else }}<span></span>{{ end }}
+      {{ with $nextPost }}
+      <a href="{{ .Permalink }}" rel="next">
+        <span class="series-nav__dir">Newer essay →</span>
+        <span class="series-nav__title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </nav>
+    {{ end }}
 
-    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--stone);">
-      <a href="/blog" style="font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--plum);">← All Writing</a>
+    <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--rule);">
+      <a href="/blog/" style="font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">← All Writing</a>
     </div>
-  </article>
-</div>
+  </footer>
+</article>
+
+<!-- NEWSLETTER CTA -->
+<section class="letters">
+  <div class="container--narrow">
+    <span class="eyebrow">Letters from the Desk</span>
+    <h2 style="margin-bottom:1rem;">One good letter, every couple of weeks.</h2>
+    <p>Enjoying these? Get governance without theater, AI without hype, and the systems that carry a real life — plus the free <a href="/automated-household/downloads/">Field Guide Vault</a> and first word on the book.</p>
+    {{ partial "mc-form.html" (dict "uid" (printf "post-%s" (.File.BaseFileName | urlize)) "button" "Subscribe" "success" "Welcome in. The next letter comes to you.") }}
+  </div>
+</section>
 {{ end }}

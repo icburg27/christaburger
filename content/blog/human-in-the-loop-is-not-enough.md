@@ -15,9 +15,10 @@ tags:
 - AI decision-making
 - cybersecurity governance
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 "Human in the loop" has become one of those phrases we say to make everyone feel better.

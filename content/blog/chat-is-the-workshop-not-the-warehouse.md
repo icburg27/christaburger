@@ -15,9 +15,10 @@ tags:
 - content workflow
 - templates
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 A lot of AI value dies in chat windows.

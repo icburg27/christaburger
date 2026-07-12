@@ -1,5 +1,5 @@
 ---
-title: "Enterprise Work Has Outgrown the Dashboard"
+title: Enterprise Work Has Outgrown the Dashboard
 slug: quest-guide-dashboard
 date: '2026-07-06'
 lead: A dashboard tells observers what happened. A quest guide helps operators decide what to do next.
@@ -10,7 +10,11 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 *1 of 5 in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

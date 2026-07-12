@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="container--narrow">
+    <span class="page-hero__eyebrow">{{ .Params.eyebrow | default "Coming Soon" }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lead }}<p class="page-hero__lead">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container--narrow">
+  <div class="prose">
+    <div class="prose-body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+
+<section class="letters" id="waitlist">
+  <div class="container--narrow">
+    <span class="eyebrow">The Waitlist</span>
+    <h2 style="margin-bottom:1rem;">Be there when the door opens.</h2>
+    <p>Join the letters list and you're on the Field Notes waitlist automatically — one good letter every couple of weeks, and first word the moment membership opens. Nothing existing goes behind the door. Ever.</p>
+    {{ partial "mc-form.html" (dict "uid" "field-notes-waitlist" "button" "Join the Waitlist" "fname" true "success" "You're on the waitlist. First word goes to you.") }}
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Meanwhile, the library is open.</h2>
+    <p>Forty-some essays, all free — start with the essentials or wander the worlds.</p>
+    <a href="/blog/" class="btn btn--gold">Explore the Ideas</a>
+  </div>
+</div>
+{{ end }}

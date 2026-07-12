@@ -11,7 +11,7 @@
   <div class="about-content">
     <div>
       {{ if fileExists "static/images/christa-headshot.jpg" }}
-        <img src="/images/christa-headshot.jpg" alt="Christa Burger" class="about-content__photo">
+        <img loading="lazy" src="/images/christa-headshot.jpg" alt="Christa Burger" class="about-content__photo">
       {{ else }}
         <div class="about-content__photo-placeholder">Photo Coming Soon</div>
       {{ end }}
@@ -49,7 +49,7 @@
 </div>
 
 <div class="image-band">
-  <img src="/images/clover-sunset.jpg" alt="Pink clover flowers in warm evening light — Colorado field at golden hour">
+  <img loading="lazy" src="/images/clover-sunset.jpg" alt="Pink clover flowers in warm evening light — Colorado field at golden hour">
 </div>
 
 <div class="philosophy" style="margin-top:0;">

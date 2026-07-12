@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="page-hero">
   <div class="container--narrow">
-    <span class="page-hero__eyebrow">{{ .Section | title }}</span>
+    <span class="page-hero__eyebrow">{{ with .Params.eyebrow }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</span>
     <h1>{{ .Title }}</h1>
     {{ if .Params.lead }}<p class="page-hero__lead">{{ .Params.lead }}</p>{{ end }}
   </div>

@@ -5,4 +5,22 @@
 [build.environment]
   HUGO_VERSION = "0.160.1"
 
-# Removed catch-all redirect — Hugo generates all pages as real files, no SPA routing needed
+# ── Redirects for retired/renamed URLs (all other URLs unchanged) ──
+
+# Series name normalized to "The Quest Guide Era"
+[[redirects]]
+  from = "/series/the-quest-guide-era-why-enterprise-work-needs-more-than-dashboards/*"
+  to = "/series/the-quest-guide-era/"
+  status = 301
+
+# "Practical AI" category retired in favor of the four editorial categories
+[[redirects]]
+  from = "/categories/practical-ai/*"
+  to = "/blog/"
+  status = 301
+
+# Convenience alias
+[[redirects]]
+  from = "/membership"
+  to = "/field-notes/"
+  status = 301

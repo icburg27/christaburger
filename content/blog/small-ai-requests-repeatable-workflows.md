@@ -14,9 +14,10 @@ tags:
 - workflow automation
 - systems thinking
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 In my journey of systematizing my life and reducing my decision load, I have learned to be suspicious of "small" AI requests, because many of them are secretly recurring workflows.

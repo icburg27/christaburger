@@ -15,9 +15,10 @@ tags:
 - AI operating model
 - AI transformation
 categories:
-- Practical AI
+- Governance and AI
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Here is how I currently think about AI maturity:

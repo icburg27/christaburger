@@ -15,9 +15,10 @@ tags:
 - decision intelligence
 - workflow automation
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 Most of the burden is not the task.

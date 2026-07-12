@@ -15,9 +15,11 @@ tags:
 - cadence
 - systems thinking
 categories:
-- Practical AI
+- Leadership and Aliveness
 series:
 - Things I've Learned Experimenting With AI
+featured: true
+access: public
 ---
 
 I used to be more impressed by heroic effort.

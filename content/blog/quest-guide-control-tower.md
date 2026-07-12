@@ -1,5 +1,5 @@
 ---
-title: "The Flight Crews Need a Control Tower"
+title: The Flight Crews Need a Control Tower
 slug: quest-guide-control-tower
 date: '2026-07-06'
 lead: AI that only helps us produce more artifacts has not solved the coordination problem. It has upgraded the fog machine.
@@ -10,7 +10,11 @@ tags:
 - AI strategy
 - Leadership
 - AI Governance
-series: "The Quest Guide Era"
+series:
+- The Quest Guide Era
+categories:
+- Quest Layer
+access: public
 ---
 
 *4 of 5 in the series: The Quest Guide Era — Why Enterprise Work Needs More Than Dashboards*

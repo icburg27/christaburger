@@ -1,5 +1,6 @@
 ---
 title: "The Automated Household"
+meta_title: "The Automated Household — The Book"
 layout: "book"
 lead: "A field guide to transferring mental load, building household systems, and using AI to make you more human."
 description: "The Automated Household by Christa Burger — a field guide to transferring mental load, building household systems, and using AI to make you more human. Kindle, paperback, and Audible."

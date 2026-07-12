@@ -15,9 +15,10 @@ tags:
 - systems thinking
 - AI experimentation
 categories:
-- Practical AI
+- Automated Household
 series:
 - Things I've Learned Experimenting With AI
+access: public
 ---
 
 One of the most annoying things AI has taught me is that the task is almost never the task.
