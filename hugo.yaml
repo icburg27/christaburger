@@ -6,39 +6,39 @@ theme: "christa"
 
 params:
   tagline: "Governance for the world that actually exists."
-  subtagline: "Build systems people can trust."
-  description: "Christa Burger builds operating systems for real life — household systems, AI with a job description, governance, and leadership — so the system carries the repetition and the humans carry the meaning."
+  subtagline: "Risk you can see. Controls that hold. Accountability that survives contact with Tuesday."
+  description: "Christa Burger is a CISO and VP of Cybersecurity with twenty years in cybersecurity governance, risk, and compliance — building decision systems that hold when the stakes are real."
   author: "Christa Burger"
   email: "christa@christaburger.com"
 
   proofbar:
-    - "20 Years Cybersecurity Governance"
-    - "VP of Cybersecurity"
+    - "CISO & VP of Cybersecurity"
+    - "20 Years in Cybersecurity Governance"
+    - "Board Director, 14 Years"
     - "Author, The Automated Household"
-    - "Household of Seven, Actually Running"
-    - "AI With a Job Description"
+    - "Keynote Speaker to Boards"
 
   services:
-    - title: "Household Operating Systems"
-      icon: "✦"
-      url: "/automated-household/"
-      link_label: "Tour the Household →"
-      description: "Care loops, defaults, a source of truth, and Hard-Week Mode: a home that knows how to recover, built for the actual humans who live there."
-    - title: "AI at the Right Layer"
-      icon: "◈"
-      url: "/automated-household/stable-system/"
-      link_label: "Meet the Helpers →"
-      description: "Not one giant assistant — an articulate junk drawer — but small helpers with job descriptions. AI prepares. Humans decide."
-    - title: "Governance & Trust Architecture"
+    - title: "Risk Oversight & Effective Challenge"
       icon: "⊕"
-      url: "/work-with-me"
-      link_label: "The Day Job →"
-      description: "The day job: decision systems, risk clarity, and customer trust for organizations where the stakes are real. Governance is not bureaucracy. It's clarity."
-    - title: "Leadership That Starts Where You Live"
+      url: "/categories/governance-and-ai/"
+      link_label: "The Governance Writing →"
+      description: "Independent assessment of first-line work. Risk appetite statements, key risk indicators, and the judgment to escalate an emerging risk before the incident rather than after it."
+    - title: "Governance Architecture"
+      icon: "◈"
+      url: "/work-with-me/"
+      link_label: "How I Build It →"
+      description: "Turning complex work into accountable decision systems: who decides, what values guide it, what risk is acceptable, how accountability flows, and how the system changes when reality changes."
+    - title: "Board & Regulatory Communication"
       icon: "❖"
-      url: "/leadership-work-life"
-      link_label: "Leadership at Home →"
-      description: "Decision rights, done states, and escalation that works at a kitchen table — because if clarity can survive dinner, five dogs, and a family calendar, it can survive a boardroom."
+      url: "/speaking/"
+      link_label: "Speaking to Boards →"
+      description: "Residual risk in thirty seconds. Reporting that survives a board risk committee and an examiner in the same week — technical truth translated without being diluted."
+    - title: "Emerging Technology Risk"
+      icon: "✦"
+      url: "/categories/quest-layer/"
+      link_label: "The AI Governance Work →"
+      description: "AI governance past the policy document: identity, intent, limits, drift detection, and succession for systems that act. The frontier lane of the practice, and the one boards are asking about now."
 
 # Top-level IA: Ideas · Work · Book · About · Contact
 # (Dropdown children live in partials/nav.html for accessible disclosure markup.)
@@ -47,18 +47,15 @@ menu:
     - name: "Ideas"
       url: "/blog"
       weight: 1
-    - name: "Work"
-      url: "/work-with-me"
+    - name: "Speaking"
+      url: "/speaking"
       weight: 2
-    - name: "Book"
-      url: "/book"
-      weight: 3
     - name: "About"
       url: "/about"
-      weight: 4
+      weight: 3
     - name: "Contact"
       url: "/contact"
-      weight: 5
+      weight: 4
 
 outputs:
   home: ["HTML", "RSS", "sitemap"]

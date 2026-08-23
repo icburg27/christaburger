@@ -1,6 +1,6 @@
 ---
 title: "About"
 layout: "about"
-lead: "Builder of systems. Governance executive. Mother of many. Creating systems that let humans be more of themselves."
-description: "Christa Burger is a cybersecurity governance executive and author of The Automated Household — building operating systems for real life, from boardrooms to kitchens."
+lead: "Cybersecurity executive. Systems architect. Builder of governance that survives contact with reality."
+description: "Christa Burger, CISO and VP of Cybersecurity — twenty years in cybersecurity governance, risk, and compliance. Board director, author, and keynote speaker on governance and AI risk."
 ---

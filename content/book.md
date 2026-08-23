@@ -3,7 +3,7 @@ title: "The Automated Household"
 meta_title: "The Automated Household — The Book"
 layout: "book"
 lead: "A field guide to transferring mental load, building household systems, and using AI to make you more human."
-description: "The Automated Household by Christa Burger — a field guide to transferring mental load, building household systems, and using AI to make you more human. Kindle, paperback, and Audible."
+description: "The Automated Household by Christa Burger — a field guide to designing operating systems that carry repetition so people can carry judgment. From the author's work in governance and AI risk."
 # When live, set: amazon_url: "https://www.amazon.com/dp/XXXXXXXXXX"
 # When cover art exists, set: cover: "/images/book-cover.jpg"
 parts:

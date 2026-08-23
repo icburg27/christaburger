@@ -42,9 +42,13 @@ Plainspoken, not simplistic. Warm, not casual. Witty in precise flashes, not per
 - Do not sterilize the voice — warmth, dry wit, and practical edge are assets.
 - Avoid: unlock potential, leverage AI, future-proof, transformation journey, thought leader.
 
-## Title policy (July 2026)
+## Title policy (UPDATED August 2026)
 
-Public credential: **VP of Cybersecurity** / "cybersecurity governance executive." Interim CISO is not featured publicly until the seat is permanent. Employer not named on the personal site.
+Public credential: **CISO & VP of Cybersecurity**. The CISO seat became permanent July 2026 — the prior "interim, do not feature" policy is RETIRED. Employer still not named on the personal site.
+
+## Positioning (August 2026 reposition)
+
+The site is now **executive-first**: a cybersecurity executive's professional site, not an author/household platform. Household and personal-life content is removed from positioning; the book remains as a credential in the Ideas lane. TAGC is expressed as ideas and frameworks in the writing, not as a company. Primary audience: boards, executive recruiters, risk organizations, speaking buyers.
 
 ## Content pillars
 

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="page-hero">
   <div class="container--narrow">
-    <span class="page-hero__eyebrow">About</span>
+    <span class="page-hero__eyebrow">The Executive Brief</span>
     <h1>Christa Burger</h1>
     <p class="page-hero__lead">{{ .Params.lead }}</p>
   </div>
@@ -11,50 +11,59 @@
   <div class="about-content">
     <div>
       {{ if fileExists "static/images/christa-headshot.jpg" }}
-        <img loading="lazy" src="/images/christa-headshot.jpg" alt="Christa Burger" class="about-content__photo">
+        <img src="/images/christa-headshot.jpg" alt="Christa Burger, CISO and VP of Cybersecurity" class="about-content__photo">
       {{ else }}
         <div class="about-content__photo-placeholder">Photo Coming Soon</div>
       {{ end }}
+      <div class="field-note" style="margin-top:2rem;">
+        <span class="field-note__label">At a Glance</span>
+        <ul style="list-style:none;margin:0;font-size:0.92rem;line-height:1.9;">
+          <li>◆ CISO &amp; VP of Cybersecurity</li>
+          <li>◆ 20 years in cybersecurity governance, risk &amp; compliance</li>
+          <li>◆ Board of directors, 14 years</li>
+          <li>◆ Author, <em>The Automated Household</em></li>
+          <li>◆ Keynote speaker to boards &amp; executive teams</li>
+        </ul>
+      </div>
     </div>
     <div class="about-content__text">
-      <span class="eyebrow">My Story</span>
-      <h2>I was the system. Then I built one.</h2>
+      <span class="eyebrow">Professional Summary</span>
+      <h2>I build governance that holds when the stakes are real.</h2>
       <div class="divider"></div>
-      <p>For twenty years I've worked in cybersecurity governance — the discipline of deciding how organizations handle data, risk, identities, and decisions when the stakes are real. I'm a Vice President of Cybersecurity. I know what good infrastructure looks like, and I know what happens to organizations that run on heroics instead of systems.</p>
-      <p>Which is why it took me embarrassingly long to notice that my own household was running on exactly that. Me — the memory, the scheduler, the preference archive, the risk manager, the place where the current answer lived. The realization didn't arrive as lightning. It arrived as one more stupid thing at 5:30 p.m., in a kitchen with a personality, holding the day's thousandth decision. I was not just doing tasks. I was maintaining context. And context is where the real work hides.</p>
-      <p>So I did what governance people do: I sat down with the uncomfortable question underneath the busy ones — <em>who are you, and what is your life for?</em> It took a week and felt like an existential audit. What surfaced was that I'm motivated by aliveness — building, writing, wandering the American West looking for petroglyphs, restoring old watches, my people. And a precise list of what made me feel nothing at all: the deciding, the remembering, the reconciling. Those became candidates for real infrastructure.</p>
+      <p>I am a cybersecurity executive — currently CISO and Vice President of Cybersecurity — with twenty years in the discipline of deciding how organizations handle data, risk, identity, and consequence when the outcome actually matters. My work is the architecture of accountability: who decides, what values guide the decision, what risk is acceptable, how accountability flows, and how the system changes when reality changes.</p>
+      <p>I have spent my career on the structural side of security rather than the reactive side. Anyone can write a policy. The harder work — the work I do — is building decision systems that function under pressure, that an examiner can follow, that a board can act on, and that don't collapse the first time an assumption breaks.</p>
 
-      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">What I built</h3>
+      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Risk oversight and effective challenge</h3>
       <div class="divider"></div>
-      <p>I started with dinner. One care loop. Then defaults, a source of truth, Hard-Week Mode, a weekly review — and eventually a team of small AI helpers, each with one job and a job description, because one giant assistant is just an articulate junk drawer. Yes, they're named after 1980s My Little Ponies. Yes, that turned out to be engineering: if metaphor makes a system easier to trust, remember, and use, metaphor isn't fluff. It's interface.</p>
-      <p>The result is not a perfect home and was never supposed to be. It's a home that knows how to recover. The systems plan meals, track the pantry, mind the thresholds, and brief my week — and what they actually returned was margin: presence, patience, creative capacity, the ability to rest without anything collapsing. The machine carries the repetition. The humans carry the meaning. I wrote <a href="/book"><em>The Automated Household</em></a> because I kept meeting brilliant, exhausted people carrying entire households in their heads and calling it a personal failing. It is not a personal failing. It is a missing system.</p>
-      <p>I teach this work too — most recently a featured session on the Stable System for <a href="https://www.joinwilla.com/portal?tab=replays" target="_blank" rel="noopener">Willa</a>, the community where women innovate, learn, and lead AI.</p>
+      <p>Governance only means something when someone independent can say <em>no</em> and make it stick. I build and operate the structures that make challenge possible: risk appetite expressed in terms an operator can act on, key risk indicators that move before the incident rather than after it, continuous monitoring that surfaces emerging exposure early, and escalation paths people actually use because they're clear enough to trust.</p>
+      <p>Compliance is a floor, not a ceiling. Trust is not a certificate on a wall — it is a signal system that customers, auditors, examiners, and executives can each read correctly, and it has to be engineered.</p>
 
-      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">What I believe</h3>
+      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Communicating risk to boards</h3>
       <div class="divider"></div>
-      <p>My faith shapes all of it. I'm a Christian, and I believe technology is at its best when it serves human flourishing — and at its worst when it forgets its place. That's why my systems keep a Sabbath: the improving machine has to sit down sometimes, long enough to remember it is not God. I hold the same line professionally. AI prepares; humans decide. It can plan dinner; it cannot bless the meal. It can remember the vet appointment; it cannot love the dog.</p>
-      <p>The through-line of everything — the boardroom, the book, the kitchen, the stable of small helpers — is one conviction: governance is not bureaucracy. Governance is clarity. It's how love stops relying on telepathy, at every scale I've ever tested.</p>
+      <p>I have served on a board of directors for fourteen years, which taught me the thing most security leaders learn too late: a board does not want the technical truth diluted — it wants the technical truth <em>translated</em>, with the reasoning available the moment someone asks for it. Residual risk in thirty seconds. The full model on request.</p>
+      <p>I write and speak for that audience regularly, including keynotes on governance, AI risk, and accountable operating models for boards, executive teams, and security and risk organizations.</p>
 
-      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Who belongs here</h3>
+      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Emerging technology risk</h3>
       <div class="divider"></div>
-      <p>If you're the one your household or your team quietly runs on — the noticer, the rememberer, the single point of failure — you're who I write for. If you want a perfectly optimized life, I'd be wasting your time; ordinary is where the relief enters, and I'll keep saying so. Start with <a href="/book">the free chapter</a>, wander <a href="/automated-household/">the Automated Household</a>, or <a href="/work-with-me">bring me the enterprise version</a> of the same problem.</p>
-      <p><em>Because in the end, systems tell stories. And the ones we build inevitably shape the people we become.</em></p>
+      <p>The governance question for AI is not "what can it do?" but "who is it, what is it for, where are its limits, and how do we know when it has drifted?" I work at that frontier — identity, intent architecture, drift detection, limits, and succession for systems that take real action — and I publish the frameworks openly, because the organizations facing this problem need working models faster than the standards bodies can produce them.</p>
+      <p>That work is the through-line of my writing: several dozen essays on governance, AI risk, and the operating models that survive contact with reality, along with <a href="/book/"><em>The Automated Household</em></a>, a field guide to designing systems that carry repetition so people can carry judgment.</p>
+
+      <h3 style="margin-top:2.5rem;margin-bottom:1rem;">How I lead</h3>
+      <div class="divider"></div>
+      <p>I build teams that can think, not just execute — because a risk function staffed by people who only follow procedure will miss exactly the thing procedures don't cover. I hire for judgment, develop for range, and give people the context to make good calls without me in the room.</p>
+      <p>The through-line of everything, from the boardroom to the frameworks I publish: governance is not bureaucracy. Governance is clarity. It's how an organization stops relying on the memory, goodwill, and heroics of individual people — and starts relying on something built.</p>
 
       <div style="margin-top:2.5rem;">
-        <a href="/book" class="btn btn--gold">Get the Free Chapter</a>
-        <a href="/blog/#letters" class="btn btn--purple" style="margin-left:1rem;">Letters from the Desk</a>
+        <a href="/contact/" class="btn btn--gold">Get In Touch</a>
+        <a href="/blog/" class="btn btn--purple" style="margin-left:1rem;">Read the Writing</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="image-band">
-  <img loading="lazy" src="/images/clover-sunset.jpg" alt="Pink clover flowers in warm evening light — Colorado field at golden hour">
-</div>
-
 <div class="philosophy" style="margin-top:0;">
   <div class="container">
-    <p class="philosophy__quote">"The machine can carry repetition. The human must carry <strong>meaning</strong>."</p>
+    <p class="philosophy__quote">"Governance is not bureaucracy. Governance is <strong>clarity</strong>."</p>
     <span class="philosophy__attr">— Christa Burger</span>
   </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 title: "Speaking & Workshops"
 layout: "speaking"
-lead: "Governance without theater. AI without hype or panic. Leadership people can actually live."
+lead: "Governance without theater. AI risk without hype or panic. Keynotes and working sessions for boards, executives, and risk organizations."
 description: "Book Christa Burger for keynotes, executive workshops, and community education on governance, AI, leadership, and human operating systems."
 featured_title: "The Stable System — a one-hour session for Willa"
 featured_text: "Willa is the community where women innovate, learn, and lead AI. I taught the full Stable System — the invisible work, the care loops, the pony-staffed household that actually runs — to their national audience. Replay available in the Willa portal."
