@@ -1371,7 +1371,7 @@ img { max-width: 100%; height: auto; }
 /* ============================================================
    EXECUTIVE BRIEF — the scrollytelling spine
    ============================================================ */
-.xb { background: var(--paper); }
+.xb { background: var(--paper); overflow-x: hidden; }
 
 /* ── opening ── */
 .xb-hero { padding: clamp(4rem,9vw,7rem) 0 clamp(3rem,6vw,4.5rem); text-align: center; }
@@ -1379,8 +1379,9 @@ img { max-width: 100%; height: auto; }
 .xb-hero__lead { font-family: var(--font-serif); font-size: clamp(1.15rem,2.3vw,1.5rem); color: var(--ink); line-height: 1.45; margin-bottom: .75rem; }
 .xb-hero__sub { font-style: italic; color: var(--muted-text); margin-bottom: 2rem; }
 .xb-glance { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-bottom: 2.5rem; }
-.xb-glance span { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--plum); border: 1px solid var(--rule); background: var(--surface); border-radius: 2px; padding: .4rem .8rem; }
+.xb-glance { max-width: 46em; margin-left: auto; margin-right: auto; }
+.xb-glance span { font-size: .72rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--plum); border: 1px solid var(--rule); background: var(--surface); border-radius: 2px; padding: .38rem .7rem; }
 .xb-scrollcue { font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-text); display: flex; flex-direction: column; align-items: center; gap: .6rem; }
 .xb-scrollcue span { display: block; width: 1px; height: 34px; background: linear-gradient(var(--antique-gold), transparent); animation: xbcue 2.2s ease-in-out infinite; }
 @keyframes xbcue { 0%,100%{opacity:.35;transform:scaleY(.7)} 50%{opacity:1;transform:scaleY(1)} }
@@ -1532,3 +1533,71 @@ img { max-width: 100%; height: auto; }
   .xb-gap__mid i::after { width: var(--w) !important; transition: none !important; }
   .xb-scrollcue span { animation: none; }
 }
+
+
+/* ── Executive Brief: cyberflowers & purple ── */
+.xb-hero--orchid {
+  position: relative;
+  background: #0d0716 url('/images/circuit-orchid.jpg') right center/cover no-repeat;
+  color: var(--paper-on-dark);
+  overflow: hidden;
+}
+.xb-hero__veil {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(13,7,22,.97) 0%, rgba(20,10,38,.92) 38%, rgba(28,14,52,.62) 62%, rgba(28,14,52,.28) 100%),
+    radial-gradient(ellipse at 18% 40%, rgba(76,54,92,.55) 0%, transparent 60%);
+}
+.xb-hero__inner { position: relative; z-index: 1; }
+.xb-hero--orchid h1,
+.xb-hero--orchid .xb-hero__lead { color: var(--paper-on-dark); }
+.xb-hero--orchid .page-hero__eyebrow { color: var(--gold-bright); }
+.xb-hero--orchid .xb-hero__sub { color: rgba(226,200,255,.82); }
+.xb-hero--orchid .xb-glance span {
+  color: #E8D9FF; border-color: rgba(201,169,107,.45);
+  background: rgba(255,255,255,.06); backdrop-filter: blur(3px);
+}
+.xb-hero--orchid .xb-scrollcue { color: rgba(232,217,255,.7); }
+.xb-hero--orchid .xb-scrollcue span { background: linear-gradient(var(--gold-bright), transparent); }
+
+/* mid-page bloom interlude */
+.xb-interlude {
+  position: relative;
+  width: 100vw; margin-left: calc(50% - 50vw); margin-top: 1rem; margin-bottom: 1rem;
+  padding: clamp(4rem,9vw,7rem) clamp(1.5rem,6vw,4rem);
+  background: #120a20 url('/images/wireframe-lotus.jpg') center 38%/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 320px;
+}
+.xb-interlude__veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(18,10,32,.86) 0%, rgba(30,14,56,.62) 50%, rgba(18,10,32,.88) 100%);
+}
+.xb-interlude__line {
+  position: relative; z-index: 1;
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(1.25rem,2.9vw,2rem); line-height: 1.45;
+  color: #F3E9FF; text-align: center; max-width: 24em; margin: 0;
+  text-shadow: 0 2px 24px rgba(10,4,20,.7);
+}
+
+/* closing bloom */
+.xb-close--bloom {
+  background:
+    linear-gradient(180deg, rgba(20,11,36,.92) 0%, rgba(27,42,61,.9) 55%, rgba(20,11,36,.95) 100%),
+    url('/images/dark-neon-flower.jpg') center/cover no-repeat;
+}
+
+/* more purple in the spine itself */
+.xb-rail__fill { background: linear-gradient(var(--gold-bright), #7E5C9E 45%, var(--plum)); }
+.is-in .xb-dot { background: var(--plum); border-color: var(--gold-bright); }
+.is-in .xb-dot--flag { background: #7E5C9E; border-color: var(--gold-bright); box-shadow: 0 0 0 5px var(--paper), 0 0 16px rgba(126,92,158,.55); }
+.xb-conv__hub { fill: #6B4A87; }
+.xb-gap__label { color: #7E5C9E; }
+.xb-lead__hub { background: linear-gradient(135deg, var(--plum), #7E5C9E); }
+
+@media (max-width: 900px) {
+  .xb-hero--orchid { background-position: 72% center; }
+  .xb-interlude { min-height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) { .xb-hero--orchid .xb-scrollcue span { animation: none; } }
