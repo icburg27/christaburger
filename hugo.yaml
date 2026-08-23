@@ -7,16 +7,17 @@ theme: "christa"
 params:
   tagline: "Governance for the world that actually exists."
   subtagline: "Risk you can see. Controls that hold. Accountability that survives contact with Tuesday."
-  description: "Christa Burger is a CISO and VP of Cybersecurity with twenty years in cybersecurity governance, risk, and compliance — building decision systems that hold when the stakes are real."
+  description: "Christa Burger is a CISO and VP of Cybersecurity with twenty years in cybersecurity governance, risk, and compliance across financial services and regulated industries. MBA in Finance. Board director."
   author: "Christa Burger"
   email: "christa@christaburger.com"
 
   proofbar:
     - "CISO & VP of Cybersecurity"
     - "20 Years in Cybersecurity Governance"
+    - "Financial Services & Trust"
+    - "MBA, Finance"
     - "Board Director, 14 Years"
-    - "Author, The Automated Household"
-    - "Keynote Speaker to Boards"
+    - "Author & Keynote Speaker"
 
   services:
     - title: "Risk Oversight & Effective Challenge"
