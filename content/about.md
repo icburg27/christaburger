@@ -1,6 +1,6 @@
 ---
 title: "About"
 layout: "about"
-lead: "Cybersecurity executive. Systems architect. Builder of governance that survives contact with reality."
-description: "Christa Burger, CISO and VP of Cybersecurity — twenty years in cybersecurity governance, risk, and compliance. Board director, author, and keynote speaker on governance and AI risk."
+lead: "Cybersecurity executive. Systems builder. Governance architecture for the world that actually exists."
+description: "The Executive Brief — Christa Burger, CISO and VP of Cybersecurity. Twenty-plus years across cybersecurity, risk, resilience, and governance in finance and technology."
 ---
