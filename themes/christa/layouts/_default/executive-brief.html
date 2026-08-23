@@ -278,11 +278,18 @@
   stations.forEach(function(s){ io.observe(s); });
 
   // failsafe: nothing stays invisible for more than 5s
-  setTimeout(revealAll, 5000);
+  setTimeout(revealAll, 2500);
 
   function onScroll(){
+    var vh = window.innerHeight;
+    // deterministic reveal — never depends on IntersectionObserver firing
+    for (var i=0; i<stations.length; i++){
+      var st = stations[i];
+      if (st.classList.contains('is-in')) continue;
+      if (st.getBoundingClientRect().top < vh * 0.92) st.classList.add('is-in');
+    }
     if(!fill) return;
-    var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+    var r = wrap.getBoundingClientRect();
     var total = r.height - vh*0.4;
     var done = Math.min(Math.max(vh*0.5 - r.top, 0), total);
     fill.style.height = (total>0 ? (done/total*100) : 0) + '%';
