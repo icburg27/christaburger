@@ -1,0 +1,296 @@
+{{ define "main" }}
+<div class="xb">
+
+  <!-- ══ OPENING ══ -->
+  <header class="xb-hero">
+    <div class="container--narrow">
+      <span class="page-hero__eyebrow">The Executive Brief</span>
+      <h1>Christa Burger</h1>
+      <p class="xb-hero__lead">Cybersecurity executive. Systems builder.<br>Governance architecture for the world that actually exists.</p>
+      <p class="xb-hero__sub">Building operating systems that build and reinforce trust.</p>
+      <div class="xb-glance">
+        <span>CISO &amp; VP of Cybersecurity</span>
+        <span>20+ years — cyber, risk, resilience &amp; governance</span>
+        <span>14 years board service</span>
+        <span>Enterprise AI, cloud &amp; regulatory governance</span>
+        <span>Author, advisor, teacher &amp; speaker</span>
+      </div>
+      <div class="xb-scrollcue" aria-hidden="true"><span></span>Follow the spine</div>
+    </div>
+  </header>
+
+  <!-- ══ THE SPINE ══ -->
+  <div class="xb-spine-wrap">
+    <div class="xb-rail" aria-hidden="true"><div class="xb-rail__fill" id="xb-fill"></div></div>
+
+    <!-- 1 · WHERE TRUST IS NOT THEORETICAL -->
+    <section class="xb-station" data-station="1">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <svg viewBox="0 0 300 220" role="img" aria-label="Seven operating environments converging into a single practice">
+          <g class="xb-conv">
+            {{ $envs := slice "Financial services" "Enterprise SaaS" "Trust operations" "Security technology" "Business resilience" "Risk" "Governance" }}
+            {{ range $i, $e := $envs }}
+            <line x1="18" y1="{{ add 22 (mul $i 29) }}" x2="220" y2="110" class="xb-conv__line" style="animation-delay:{{ mul $i 90 }}ms"/>
+            <circle cx="18" cy="{{ add 22 (mul $i 29) }}" r="4" class="xb-conv__dot" style="animation-delay:{{ mul $i 90 }}ms"/>
+            <text x="30" y="{{ add 26 (mul $i 29) }}" class="xb-conv__label">{{ $e }}</text>
+            {{ end }}
+            <circle cx="224" cy="110" r="12" class="xb-conv__hub"/>
+          </g>
+        </svg>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">Where I've worked</span>
+        <h2>Twenty years inside the places where trust is not theoretical.</h2>
+        <p class="xb-claim">The rooms where the more ephemeral side of business is conducted — and where really good strategy can be created.</p>
+        <details class="xb-more">
+          <summary>The full picture</summary>
+          <div class="xb-more__body">
+            <p>Financial services. Enterprise SaaS. Trust operations. Security technology. Cybersecurity. Business resilience. Risk. Governance.</p>
+            <p>Today, I serve as CISO and Vice President of Cybersecurity, responsible for the systems an organization uses to decide how it treats data, identity, technology, risk, AI, accountability, and trust.</p>
+            <p>And I love governance and risk. It's an art: most governance looks perfectly respectable until something goes wrong. The proof is when governance has to run under stress. And that is what I build for.</p>
+            <p>That means deciding who has authority, what evidence matters, which risks are acceptable, how decisions escalate, how accountability flows, and what changes when reality stops matching the assumptions in the policy. Because reality does exactly that. It wanders in with suboptimal parameters, it does the thing you didn't think about, it breaks the spreadsheet, and asks whether the operating model was real or decorative. Resilient or brittle.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 2 · SCALE -->
+    <section class="xb-station" data-station="2">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <div class="xb-scale">
+          <div class="xb-scale__row"><b>$2B+</b><span>in assets — business resilience strategy for a high-net-worth division at a national brokerage and wealth management firm</span></div>
+          <div class="xb-scale__row"><b>$500M+</b><span>in new corporate partnerships enabled by the enterprise infosec program and attestations I built at a trust and custody company</span></div>
+          <div class="xb-scale__row"><b>1,000s</b><span>of customers whose data we protect today across complex enterprise SaaS environments</span></div>
+        </div>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">Different environments, same question</span>
+        <h2>Can this organization make informed decisions quickly when the stakes are real?</h2>
+        <p class="xb-claim">The technologies change. The underlying operating principles rarely shift.</p>
+        <details class="xb-more">
+          <summary>How that work connects</summary>
+          <div class="xb-more__body">
+            <p>My career has taken me through very different operating environments — brokerage and wealth management, trust and custody, defense contracting, and enterprise SaaS.</p>
+            <p>Today, that same work sits at the intersection of cybersecurity, enterprise risk, cloud, AI, regulatory assurance, and customer trust. That's what I love being a part of.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 3 · THE GAP — centerpiece -->
+    <section class="xb-station xb-station--wide" data-station="3">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot xb-dot--flag"></span></div>
+      <div class="xb-gap">
+        <div class="xb-gap__head">
+          <span class="xb-kicker">Why I love risk</span>
+          <h2>Risk is the gap between stated governance and lived reality.</h2>
+        </div>
+        <div class="xb-gap__diagram" role="img" aria-label="Four pairs showing what governance states versus what the system actually does; the distance between them is risk">
+          <div class="xb-gap__col xb-gap__col--say"><span class="xb-gap__hdr">What we say</span>
+            <em>Policy</em><em>Decision rights</em><em>Escalation</em><em>Evidence</em>
+          </div>
+          <div class="xb-gap__mid" aria-hidden="true">
+            <i style="--w:86%"></i><i style="--w:58%"></i><i style="--w:34%"></i><i style="--w:12%"></i>
+            <span class="xb-gap__label">the gap is the risk</span>
+          </div>
+          <div class="xb-gap__col xb-gap__col--do"><span class="xb-gap__hdr">What the system does</span>
+            <em>The workflow rewards otherwise</em><em>Whoever is awake decides</em><em>A path nobody uses</em><em>Quietly telling the truth in the corner</em>
+          </div>
+        </div>
+        <p class="xb-claim xb-claim--center">It is the distance between who we say we are and who our behaviors, incentives, controls, decisions, defaults, and evidence prove us to be.</p>
+        <details class="xb-more xb-more--center">
+          <summary>Read the whole argument</summary>
+          <div class="xb-more__body">
+            <p>I have seen beautiful risk registers with colors, categories, scoring models, heat maps, and a general vibe of confidence that <em>here be where the dragons are</em>. But if that work does not translate into the context layer — where it informs what the business needs to maneuver through its world — then it becomes a performative exercise.</p>
+            <p>We should not be interested in performative exercises in 2026. No resourcing for that.</p>
+            <p>That is why risk management cannot live only in a register. A risk register can name the concern, but it cannot, by itself, change the operating reality that created it.</p>
+            <p>That is the real value of risk. Risk is context. Risk says: here are the gaps between who we want to be and who we currently are. Here is where our governance is aspirational instead of operational. Here is where the policy says one thing, the workflow rewards another, and the evidence is quietly telling the truth in the corner.</p>
+            <p>The job is not to eliminate disagreement or uncertainty. The job is to make both visible early enough to act. A mature governance function should sometimes enable the business, sometimes challenge it, and occasionally say no. But the no should have architecture behind it: evidence, consequence, alternatives, authority, and a way forward.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 4 · ARCHITECTURE CLOSES IT -->
+    <section class="xb-station" data-station="4">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <div class="xb-ladder" role="img" aria-label="Eight structural rungs that close the gap">
+          {{ $rungs := slice "Decision rights" "Escalation paths" "Evidence loops" "Accountability structures" "Metrics" "Defaults" "Control points" "Rhythms" }}
+          {{ range $i, $r := $rungs }}
+          <span class="xb-rung" style="animation-delay:{{ mul $i 80 }}ms">{{ $r }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">What actually closes it</span>
+        <h2>Architecture. Not slogans.</h2>
+        <p class="xb-claim">When governance is designed well, risk reduces more naturally — because the system begins teaching the organization how to behave.</p>
+        <details class="xb-more">
+          <summary>What good architecture does</summary>
+          <div class="xb-more__body">
+            <p>Not through slogans. Not through annual training that everyone clicks through with the haunted eyes of a person bargaining with a compliance portal. Through architecture.</p>
+            <p>The system makes the desired behavior easier to repeat. It makes the wrong behavior harder to hide. It gives the business context early enough to make better decisions. It shows where assumptions are failing, where ownership is unclear, where incentives are misaligned, and where the organization is asking people to succeed without the structure to support them.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 5 · REGULATED -->
+    <section class="xb-station" data-station="5">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <div class="xb-badges">
+          {{ range slice "SOC 2" "PCI" "HIPAA" "FedRAMP" "Sovereign environments" "Customer assurance" "Enterprise risk" "Emerging tech governance" }}
+          <span class="xb-badge">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">I learned governance in regulated businesses</span>
+        <h2>Done badly, compliance is a tax. Done well, it becomes infrastructure for trust.</h2>
+        <p class="xb-claim">It can turn "please believe us" into "here is the evidence." It can turn invisible discipline into commercial credibility.</p>
+        <details class="xb-more">
+          <summary>Why I treat it as business architecture</summary>
+          <div class="xb-more__body">
+            <p>Before SaaS, I worked in both financial services and defense contracting — trust operations: environments where business continuity, information security, regulatory examinations, audit findings, customer assets, and operational resilience were not abstract concerns.</p>
+            <p>A strong assurance program can open markets, shorten sales cycles, satisfy regulators, give customers confidence, and create a common language between technical teams and executives.</p>
+            <p>That is why I treat regulatory work as part of the business architecture, not a collection of certificates hanging on the wall. The point is whether the organization knows how to carry responsibility — not whether it tacks on a new badge at the end of every audit cycle.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 6 · BOARDS -->
+    <section class="xb-station" data-station="6">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <svg viewBox="0 0 300 200" role="img" aria-label="Complexity narrowing into a clear answer without being lost">
+          <g class="xb-funnel">
+            {{ range $i := (seq 0 1 11) }}
+            <line class="xb-funnel__in" x1="10" y1="{{ add 14 (mul $i 16) }}" x2="150" y2="100" style="animation-delay:{{ mul $i 55 }}ms"/>
+            {{ end }}
+            <circle cx="152" cy="100" r="9" class="xb-funnel__core"/>
+            <line x1="163" y1="100" x2="286" y2="100" class="xb-funnel__out"/>
+            <text x="196" y="92" class="xb-funnel__label">the answer</text>
+            <text x="176" y="126" class="xb-funnel__sub">complexity preserved underneath</text>
+          </g>
+        </svg>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">Boards &amp; executives</span>
+        <h2>Translation and context. Never dilution.</h2>
+        <p class="xb-claim">A board does not want the technical truth diluted — and excellent communication is a gift.</p>
+        <details class="xb-more">
+          <summary>Fourteen years of board service taught me this</summary>
+          <div class="xb-more__body">
+            <p>I have served on a board of directors for fourteen years. It taught me something security leaders often learn too late.</p>
+            <p>A good executive risk conversation preserves the complexity underneath the answer without forcing the audience to carry all of it. That is stewardship — a necessary component of high-performing leadership.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 7 · AI -->
+    <section class="xb-station" data-station="7">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <div class="xb-shift">
+          <div class="xb-shift__col"><span>Tools</span><span>Assistance</span><span>Execution</span></div>
+          <div class="xb-shift__arrow" aria-hidden="true">→</div>
+          <div class="xb-shift__col xb-shift__col--now"><span>Agents</span><span>Action</span><span>Participation in decisions</span></div>
+        </div>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">Emerging technology risk</span>
+        <h2>AI changes who can make decisions.</h2>
+        <p class="xb-claim">It is a decision-rights problem. It is an operating-model problem. It is a trust problem wearing a very shiny new interface.</p>
+        <details class="xb-more">
+          <summary>Where I work on this</summary>
+          <div class="xb-more__body">
+            <p>As AI moves from tools to agents and from assistance to action, governance has to move with it. Identity, permissions, intent, data access, agent interactions, auditability, accountability, and human judgment become parts of the same system.</p>
+            <p>I work at that frontier, designing governance for systems in which software increasingly participates in decisions rather than merely executing them. The answer will not be another policy document quietly aging in a folder.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 · LEADERSHIP -->
+    <section class="xb-station" data-station="8">
+      <div class="xb-node" aria-hidden="true"><span class="xb-dot"></span></div>
+      <div class="xb-art">
+        <div class="xb-lead">
+          <span class="xb-lead__hub">Context</span>
+          <div class="xb-lead__spokes">
+            {{ range slice "Decision rights" "Expectations" "Room for judgment" "Why the system exists" }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="xb-copy">
+        <span class="xb-kicker">How I lead</span>
+        <h2>I build teams that can think.</h2>
+        <p class="xb-claim">A risk function staffed entirely by people who know how to follow the procedure will eventually encounter the situation the procedure never anticipated. That is usually where the interesting work begins.</p>
+        <details class="xb-more">
+          <summary>What I believe good governance does for people</summary>
+          <div class="xb-more__body">
+            <p>Procedures matter. Standards matter. Controls matter. Evidence matters. But I give people context, decision rights, expectations, and room to develop judgment. I want teams that understand not only what we do, but why the system exists, what outcome it is protecting, and when the assumptions underneath it have changed.</p>
+            <p>I believe good governance should reduce dependence on memory, heroics, institutional folklore, and the one person who somehow knows where everything is buried. It should create rhythm. It should create clarity. It should make the invisible work visible enough to be owned. And over time, it should make good decisions easier to repeat.</p>
+            <p>That principle runs through nearly everything I build, from enterprise cybersecurity and AI governance to the systems I write about outside of work.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ CLOSE ══ -->
+  <section class="xb-close">
+    <div class="container--narrow">
+      <span class="xb-kicker xb-kicker--light">The question underneath</span>
+      <p class="xb-close__quote">How do we build systems that can carry responsibility without losing the humans who give them meaning?</p>
+      <p class="xb-close__zing">Trust is built by creating systems that reinforce desired outcomes and behavior — even under stress and disorganization.</p>
+      <div class="xb-close__ctas">
+        <a href="/contact/" class="btn btn--gold">Get In Touch</a>
+        <a href="/blog/" class="btn btn--outline">Read the Writing</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.xb-spine-wrap');
+  var stations = [].slice.call(document.querySelectorAll('.xb-station'));
+  var fill = document.getElementById('xb-fill');
+  if(!wrap || !stations.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function revealAll(){ stations.forEach(function(s){ s.classList.add('is-in'); }); }
+  if (reduce || !('IntersectionObserver' in window)) { revealAll(); if(fill) fill.style.height='100%'; return; }
+
+  // only now do we allow CSS to hide anything
+  document.documentElement.classList.add('xb-anim');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, {rootMargin:'200px 0px 0px 0px', threshold:0.01});
+  stations.forEach(function(s){ io.observe(s); });
+
+  // failsafe: nothing stays invisible for more than 5s
+  setTimeout(revealAll, 5000);
+
+  function onScroll(){
+    if(!fill) return;
+    var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+    var total = r.height - vh*0.4;
+    var done = Math.min(Math.max(vh*0.5 - r.top, 0), total);
+    fill.style.height = (total>0 ? (done/total*100) : 0) + '%';
+  }
+  var tick=false;
+  window.addEventListener('scroll', function(){ if(!tick){ requestAnimationFrame(function(){ onScroll(); tick=false; }); tick=true; } }, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+{{ end }}
