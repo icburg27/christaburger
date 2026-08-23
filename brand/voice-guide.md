@@ -44,7 +44,7 @@ Plainspoken, not simplistic. Warm, not casual. Witty in precise flashes, not per
 
 ## Title policy (UPDATED August 2026)
 
-Public credential: **CISO & VP of Cybersecurity**. The CISO seat became permanent July 2026 — the prior "interim, do not feature" policy is RETIRED. Employer still not named on the personal site.
+Public credential: **CISO & VP of Cybersecurity**. The CISO seat became permanent July 2026 — the prior "interim, do not feature" policy is RETIRED. Employers are NOT named on the personal site — past or present. Describe them categorically instead ("a national brokerage and wealth management firm," "a trust and custody company," "enterprise SaaS"). Quantified outcomes stay: $2B in assets, $500M in partnerships. Confirmed 2026-08-23.
 
 ## Positioning (August 2026 reposition)
 
